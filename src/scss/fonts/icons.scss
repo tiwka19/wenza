@@ -1,0 +1,29 @@
+%ic {
+	font-family: 'icons';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*='_icon-'] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-arrow-up:before {
+	content: '\e900';
+}
+._icon-email:before {
+	content: '\e901';
+}
+._icon-location:before {
+	content: '\e902';
+}
+._icon-phone:before {
+	content: '\e903';
+}
