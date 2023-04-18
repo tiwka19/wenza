@@ -7,6 +7,8 @@
   left: 0;
   width: 100%;
   z-index: 10;
+  background-color: var(--bg-primary);
+  transition: box-shadow 0.2s ease 0s;
   &._header-scroll {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
@@ -36,7 +38,7 @@
     @media (max-width: em(1180)) {
       position: fixed;
       width: rem(300);
-      height: rem(400);
+      height: auto;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -85,6 +87,7 @@
   &__item {
     transition: all 0.3s ease 0s;
     position: relative;
+    font-weight: 600;
     @media (any-hover: hover) {
       &:hover {
         color: var(--text-accent);

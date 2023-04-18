@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"HomePage" })
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-				<div class="page__container">
-				
-				</div>
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_js.htm',{})
-	</body>
+  @@include('html/_head.htm',{ "title":"HomePage" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <div class="hero" id="hero">
+          <div class="hero__container">
+            <div class="hero__data">
+              <h1 class="hero__title">Smart Solutions for Smart Machines</h1>
+              <h2 class="hero__subtitle">Metal Cutting Tools Manufacturer</h2>
+              <a href="#" class="hero__button button">meet me</a>
+            </div>
+            <div class="hero__image">
+              <img src="@img/hero.png" alt="hero image" />
+            </div>
+          </div>
+        </div>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
 </html>
