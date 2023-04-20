@@ -7,14 +7,13 @@
 @import 'fonts/fonts';
 @import 'fonts/icons';
 
-
 // Basic Setup ==============================================================================================================================================================================================================================================================================
 $fontFamily: FuturaBook;
 $fontFamilyHeading: HalvarBreitMedium;
-$fontSize: rem(20); 
+$fontSize: rem(20);
 
 // Основні кольори
-$mainColor: var(--text-primary); 
+$mainColor: var(--text-primary);
 
 // Палітра кольорів
 @import 'base/colors-palette';

@@ -4,14 +4,23 @@
 }
 [data-showmore-button] {
 	span {
-		&:last-child {
+		&:nth-child(2) {
 			display: none;
 		}
 		._showmore-active & {
 			display: none;
-			&:last-child {
+			&:nth-child(2) {
 				display: block;
 			}
 		}
+	}
+	svg {
+		transition: transform 0.3s ease 0s;
+	}
+}
+
+._showmore-active {
+	svg {
+		transform: rotate(180deg);
 	}
 }

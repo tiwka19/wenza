@@ -1,6 +1,6 @@
 // Загальний файл елементів форм
 // Для підключення/відключення стилів конкретного елемента форми дивись base/forms/forms.scss
-@import "base/forms/forms";
+@import 'base/forms/forms';
 
 // Стилі попапів
 // @import "base/popup";
@@ -15,7 +15,7 @@
 // @import "base/maps";
 
 // Стилі блоку "показати ще"
-// @import "base/showmore";
+@import 'base/showmore';
 
 // Стилі для липкого блоку
 // @import "base/sticky";
@@ -38,7 +38,7 @@
 // Стилі для чуйних картинок (IBG)
 // Сніппет (HTML): ibg (div з картинкою та класами)
 // Сніппет (HTML): ibga (a з картинкою та класами)
-[class*="-ibg"] {
+[class*='-ibg'] {
 	position: relative;
 	img {
 		position: absolute;
@@ -49,7 +49,7 @@
 		object-fit: cover;
 	}
 }
-[class*="-ibg_contain"] {
+[class*='-ibg_contain'] {
 	img {
 		object-fit: contain;
 	}
