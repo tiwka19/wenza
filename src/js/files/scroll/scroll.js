@@ -60,10 +60,10 @@ export function pageNavigation() {
 				if (entry.isIntersecting) {
 					// Бачимо об'єкт
 					// navigatorActiveItem ? navigatorActiveItem.classList.remove('_navigator-active') : null;
-					navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
+					navigatorCurrentItem ? navigatorCurrentItem.parentNode.classList.add('_navigator-active') : null;
 				} else {
 					// Не бачимо об'єкт
-					navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
+					navigatorCurrentItem ? navigatorCurrentItem.parentNode.classList.remove('_navigator-active') : null;
 				}
 			}
 		}

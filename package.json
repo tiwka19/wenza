@@ -75,6 +75,7 @@
 		"@fontsource/poppins": "^4.5.10",
 		"gulp-cheerio": "^1.0.0",
 		"isotope-layout": "^3.0.6",
+		"scrollreveal": "^4.0.9",
 		"simplebar": "latest"
 	}
 }
