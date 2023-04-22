@@ -26,11 +26,11 @@
   }
 
   @media (max-width: $mobile) {
-    padding: rem(30) 0;
+    padding: rem(25) 0;
   }
   &._header-scroll {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    padding: rem(30) 0;
+    padding: rem(25) 0;
   }
 
   &__container {
