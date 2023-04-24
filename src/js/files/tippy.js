@@ -11,7 +11,8 @@ import "../../scss/libs/tippy.scss";
 // Підключення стилів з node_modules
 //import 'tippy.js/dist/tippy.css';
 
-// Запускаємо та додаємо в об'єкт модулів
-flsModules.tippy = tippy('[data-tippy-content]', {
-
-});
+if (window.matchMedia("(max-width: 1300px)").matches) { 
+	flsModules.tippy = tippy('[data-tippy-content]', {
+		trigger: 'click',
+	});
+}

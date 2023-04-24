@@ -841,6 +841,7 @@
 
   &__balloon {
     position: absolute;
+    pointer-events: none;
     @media (min-width: em(1300)) {
       display: none;
     }
@@ -1035,6 +1036,7 @@
     }
 
     &.active {
+      color: #5b79d1;
       &::after {
         opacity: 0;
       }
@@ -1045,6 +1047,7 @@
 
     @media (any-hover: hover) {
       &:hover {
+        color: #5b79d1;
         &::after {
           opacity: 0;
         }
