@@ -1,28 +1,14 @@
 @font-face {
-	font-family: FuturaHeavy;
+	font-family: Futura;
 	font-display: swap;
-	src: url("../fonts/FuturaHeavy.woff2") format("woff2"), url("../fonts/FuturaHeavy.woff") format("woff");
+	src: url("../fonts/Futura.woff2") format("woff2"), url("../fonts/Futura.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
-	font-family: FuturaBook;
+	font-family: Halvar;
 	font-display: swap;
-	src: url("../fonts/FuturaBook.woff2") format("woff2"), url("../fonts/FuturaBook.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: FuturaMedium;
-	font-display: swap;
-	src: url("../fonts/FuturaMedium.woff2") format("woff2"), url("../fonts/FuturaMedium.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: Poppins;
-	font-display: swap;
-	src: url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff");
+	src: url("../fonts/Halvar.woff2") format("woff2"), url("../fonts/Halvar.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
@@ -30,13 +16,6 @@
 	font-family: icons;
 	font-display: swap;
 	src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: HalvarBreitMedium;
-	font-display: swap;
-	src: url("../fonts/HalvarBreitMedium.woff2") format("woff2"), url("../fonts/HalvarBreitMedium.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }

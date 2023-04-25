@@ -34,3 +34,32 @@ map.addEventListener('mouseover', (e) => {
     places.forEach((place) => place.classList.remove('filled'));
   }
 });
+
+if (window.matchMedia('(max-width: 1300px)').matches) {
+  map.addEventListener('click', (e) => {
+    let targetItem = e.target;
+    if (targetItem.classList.contains('map__place')) {
+      places.forEach((place) => {
+        if (targetItem.dataset.map == place.id) {
+          place.classList.add('filled');
+        } else {
+          place.classList.remove('filled');
+        }
+      });
+    } else {
+      places.forEach((place) => place.classList.remove('filled'));
+    }
+  });
+}
+
+
+const callbackInputs = document.querySelectorAll('.callback__input');
+callbackInputs.forEach(input => {
+  input.addEventListener('input', (e) => {
+    if(input.value.trim() !== '') {
+      input.parentNode.classList.add('_active')
+    } else {
+      input.parentNode.classList.remove('_active');
+    }
+  })
+})

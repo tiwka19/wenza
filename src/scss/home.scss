@@ -486,6 +486,17 @@
       transition-duration: 300ms;
     }
 
+    &._active {
+      color: #4d64aa;
+      border-bottom: 1px solid #4d64aa;
+      .callback__input {
+        color: #4d64aa;
+      }
+      &::after {
+        background-color: #4d64aa;
+      }
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -521,12 +532,24 @@
       inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(8.5px);
     border-radius: 25px;
+    transition: color 0.2s ease 0s;
     @include adaptiveValue('padding', 32, 15);
     @media (max-width: $mobile) {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: rem(15);
+    }
+    svg path {
+      transition: stroke 0.2s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: #4d64aa;
+        svg path {
+          stroke: #4d64aa;
+        }
+      }
     }
   }
   &__item-title {
@@ -620,11 +643,11 @@
     font-family: $fontFamilyHeading;
     @include adaptiveValue('font-size', 24, 18);
     line-height: math.div(29, 20);
+    margin-bottom: rem(15);
     @media (max-width: $mobile) {
       display: flex;
       align-items: center;
       gap: rem(15);
-      margin-bottom: rem(15);
     }
   }
   &__step-descr {
@@ -717,10 +740,16 @@
     justify-content: space-between;
     gap: rem(15);
     min-height: rem(370);
+    transition: color 0.2s ease 0s;
     @media (max-width: em(580)) {
       flex-direction: row;
       align-items: center;
       min-height: auto;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: #4d64aa;
+      }
     }
   }
   &__item-title {
@@ -793,6 +822,7 @@
     }
     @media (max-width: $mobile) {
       grid-template-columns: 1fr;
+      gap: rem(15);
     }
   }
 
@@ -890,6 +920,25 @@
     }
   }
 
+  &__more {
+    color: #4d64aa;
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    margin: 30px auto 0 auto;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #5b79d1;
+      }
+    }
+    svg {
+      fill: currentColor;
+    }
+  }
+
   &__place {
     background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07), -3px -5px 6px rgba(255, 255, 255, 0.38), inset -3px -3px 6px rgba(255, 255, 255, 0.83),
@@ -904,6 +953,7 @@
     @media (min-width: em(1300)) {
       width: rem(270);
     }
+
     &::after,
     &::before {
       content: '';
@@ -1062,6 +1112,10 @@
     font-family: $fontFamilyHeading;
     margin-bottom: rem(15);
     pointer-events: none;
+    @media (max-width: $mobile) {
+      margin-bottom: rem(10);
+      font-size: rem(16);
+    }
   }
   &__place-phone,
   &__place-email {
