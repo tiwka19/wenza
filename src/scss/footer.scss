@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     column-gap: rem(40);
     row-gap: rem(15);
-    font-family: Halvar;
+    font-weight: 600;
   }
   &__nav-item--separate {
     @media (min-width: $tablet) {
@@ -30,7 +30,6 @@
     flex-wrap: wrap;
     column-gap: rem(30);
     row-gap: rem(10);
-    font-family: Halvar;
   }
   &__other-link {
     transition: color 0.2s ease 0s;
