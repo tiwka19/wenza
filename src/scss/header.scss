@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--bg-primary);
+ 
   transition: all 0.2s ease 0s;
   z-index: 150;
   &::after {
@@ -29,6 +29,7 @@
     padding: rem(25) 0;
   }
   &._header-scroll {
+    background-color: var(--bg-primary);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     padding: rem(25) 0;
   }
