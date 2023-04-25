@@ -763,10 +763,26 @@
       align-items: center;
       min-height: auto;
     }
+    svg {
+      max-width: rem(120);
+      @media (max-width:$mobileSmall){
+         max-width: rem(60); 
+      }
+    }
     @media (any-hover: hover) {
       &:hover {
         color: #4d64aa;
+        svg path {
+          stroke: #4d64aa;
+        }
+        svg circle {
+          stroke: #4d64aa;
+        }
+        svg rect {
+          stroke: #4d64aa;
+        }
       }
+      
     }
   }
   &__item-title {
