@@ -11,6 +11,7 @@
     column-gap: rem(40);
     row-gap: rem(15);
     font-weight: 600;
+    letter-spacing: 0.015em;
   }
   &__nav-item--separate {
     @media (min-width: $tablet) {
