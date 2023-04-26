@@ -1,6 +1,6 @@
 // Заголовки, загальні БЕМ блоки та інше...
 ._section-title {
-	@include adaptiveValue('font-size', 64, 24);
+	@include adaptiveValue('font-size', 64, 20);
 	line-height: math.div(79, 64);
 	@include adaptiveValue('margin-bottom', 60, 30);
 	font-family: $fontFamilyHeading;
