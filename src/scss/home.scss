@@ -55,7 +55,9 @@
   }
 
   &__image {
-    animation: float 3s infinite ease-in-out;
+    @media (min-width: $mobile) {
+      animation: float 3s infinite ease-in-out;
+    }
     flex: 0 0 percent(600, 1595);
     img {
       max-width: 100%;
@@ -237,10 +239,10 @@
     display: grid;
     place-items: center;
     z-index: 10;
-    background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
-    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83), inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-3px -5px 6px rgba(255, 255, 255, 0.38));
+    background: url('@img/benefits-small.svg') 0 0 no-repeat;
+    background-size: contain;
     border-radius: 50%;
+    z-index: 2;
     &::after {
       content: '';
       position: absolute;
@@ -248,8 +250,7 @@
       height: 110%;
       background: url('@img/benefits-big.svg') no-repeat center;
       background-size: contain;
-      background-position: left;
-      z-index: -2;
+      z-index: -1;
     }
     @media (max-width: em(1180)) {
       margin: 0 auto;
@@ -342,11 +343,11 @@
       &::before {
         content: '';
         position: absolute;
-        top: -100px;
+        @include adaptiveValue('top', -150, -50);
         left: 50%;
         transform: translate(calc(-50% + 150px));
         @include adaptiveValue('width', 500, 270);
-        @include adaptiveValue('height', 600, 290);
+        @include adaptiveValue('height', 700, 230);
         background: url('@img/why-mask-mobile.svg') 0 0 no-repeat;
         background-size: contain;
         background-position: center center;
@@ -354,7 +355,7 @@
       }
     }
     @media (max-width: $mobile) {
-      transform: translateX(-30px);
+      transform: translateX(-30px) !important;
       &::before {
         transform: translate(calc(-50% + 30px));
       }
@@ -364,6 +365,7 @@
 
 .produce {
   @include adaptiveValue('padding-bottom', 100, 50);
+
   &__item {
     display: flex;
     align-items: center;
@@ -371,6 +373,7 @@
     margin-bottom: rem(30);
     @media (max-width: $mobile) {
       flex-direction: column;
+      gap: rem(15);
     }
   }
 
@@ -406,7 +409,7 @@
     display: flex;
     align-items: center;
     gap: rem(10);
-    margin: 30px auto 0 auto;
+    margin: 0 auto;
     text-align: center;
     font-weight: 600;
     position: relative;
@@ -842,124 +845,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
-      gap: rem(30);
+      border-radius: rem(25);
+      gap: rem(5);
     }
     @media (max-width: $mobile) {
       grid-template-columns: 1fr;
-      gap: rem(15);
-    }
-  }
-
-  &__box {
-    transform: translate(-60px, -25px);
-    position: relative;
-    z-index: 1;
-    @media (max-width: em(1300)) {
-      transform: translate(100px);
-    }
-    @media (max-width: $mobile) {
-      transform: translate(170px);
-    }
-    svg {
-      width: rem(1939);
-      height: rem(1033);
-      transition: all 0.3s ease 0s;
-      @media (max-width: em(1300)) {
-        @include adaptiveValue('width', 1400, 650);
-        @include adaptiveValue('height', 1033, 349);
-      }
-    }
-    svg path {
-      transition: all 0.3s ease 0s;
-      position: relative;
-      &::after {
-        content: '';
-        background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8965 20.6377C14.4188 19.8508 19.7904 16.7027 19.7904 11.4582C19.7904 7.43109 16.5258 4.1665 12.4987 4.1665C8.47162 4.1665 5.20703 7.43109 5.20703 11.4582C5.20703 16.7027 10.5785 19.8508 12.1009 20.6377C12.354 20.7685 12.6434 20.7685 12.8965 20.6377ZM12.4987 14.5832C14.2246 14.5832 15.6237 13.1841 15.6237 11.4582C15.6237 9.73228 14.2246 8.33317 12.4987 8.33317C10.7728 8.33317 9.3737 9.73228 9.3737 11.4582C9.3737 13.1841 10.7728 14.5832 12.4987 14.5832Z' fill='%23333333'/%3E%3Cpath d='M12.8965 20.6377L13.172 21.1707H13.172L12.8965 20.6377ZM12.1009 20.6377L11.8254 21.1707H11.8254L12.1009 20.6377ZM19.1904 11.4582C19.1904 13.8622 17.9609 15.817 16.489 17.2963C15.0177 18.775 13.3553 19.7251 12.621 20.1047L13.172 21.1707C13.96 20.7634 15.7445 19.7459 17.3396 18.1427C18.9341 16.5402 20.3904 14.2987 20.3904 11.4582H19.1904ZM12.4987 4.7665C16.1944 4.7665 19.1904 7.76247 19.1904 11.4582H20.3904C20.3904 7.09972 16.8571 3.5665 12.4987 3.5665V4.7665ZM5.80703 11.4582C5.80703 7.76247 8.80299 4.7665 12.4987 4.7665V3.5665C8.14025 3.5665 4.60703 7.09972 4.60703 11.4582H5.80703ZM12.3764 20.1047C11.6421 19.7251 9.97965 18.775 8.50842 17.2963C7.03653 15.817 5.80703 13.8622 5.80703 11.4582H4.60703C4.60703 14.2987 6.06329 16.5402 7.65775 18.1427C9.25287 19.7459 11.0374 20.7634 11.8254 21.1707L12.3764 20.1047ZM12.621 20.1047C12.5407 20.1462 12.4567 20.1462 12.3764 20.1047L11.8254 21.1707C12.2513 21.3908 12.7461 21.3908 13.172 21.1707L12.621 20.1047ZM15.0237 11.4582C15.0237 12.8527 13.8932 13.9832 12.4987 13.9832V15.1832C14.556 15.1832 16.2237 13.5154 16.2237 11.4582H15.0237ZM12.4987 8.93317C13.8932 8.93317 15.0237 10.0637 15.0237 11.4582H16.2237C16.2237 9.40091 14.556 7.73317 12.4987 7.73317V8.93317ZM9.9737 11.4582C9.9737 10.0637 11.1042 8.93317 12.4987 8.93317V7.73317C10.4414 7.73317 8.7737 9.40091 8.7737 11.4582H9.9737ZM12.4987 13.9832C11.1042 13.9832 9.9737 12.8527 9.9737 11.4582H8.7737C8.7737 13.5154 10.4414 15.1832 12.4987 15.1832V13.9832Z' fill='%23333333'/%3E%3C/svg%3E%0A");
-        width: rem(25);
-        height: rem(25);
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    }
-    svg path.active {
-      cursor: pointer;
-    }
-    svg path.filled {
-      fill: #4d64aa;
-    }
-    svg path.active:hover {
-      fill: #4d64aa;
-    }
-  }
-
-  &__balloon {
-    position: absolute;
-    pointer-events: none;
-    @media (min-width: em(1300)) {
-      display: none;
-    }
-  }
-
-  .balloon {
-    &-cis {
-      top: percent(230, 460);
-      left: percent(240, 655);
-    }
-    &-germany {
-      top: percent(215, 460);
-      left: percent(52, 655);
-      @media (min-width: $mobile) {
-        left: percent(55, 655);
-        top: percent(220, 460);
-      }
-    }
-    &-europe {
-      top: percent(235, 460);
-      left: percent(28, 655);
-      @media (min-width: $mobile) {
-        left: percent(30, 655);
-        top: percent(240, 460);
-      }
-    }
-    &-middleEast {
-      top: percent(275, 460);
-      left: percent(130, 655);
-      @media (min-width: $mobile) {
-        top: percent(273, 460);
-        left: percent(135, 655);
-      }
-    }
-    &-rakez {
-      top: percent(342, 460);
-      left: percent(194, 655);
-      @media (min-width: $mobile) {
-        top: percent(335, 460);
-        left: percent(195, 655);
-      }
-    }
-    &-southEast {
-      top: percent(342, 460);
-      left: percent(275, 655);
-    }
-  }
-
-  &__more {
-    color: #4d64aa;
-    display: flex;
-    align-items: center;
-    gap: rem(10);
-    margin: 30px auto 0 auto;
-    text-align: center;
-    font-weight: 600;
-    position: relative;
-    @media (any-hover: hover) {
-      &:hover {
-        color: #5b79d1;
-      }
-    }
-    svg {
-      fill: currentColor;
     }
   }
 
@@ -967,13 +857,14 @@
     background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07), -3px -5px 6px rgba(255, 255, 255, 0.38), inset -3px -3px 6px rgba(255, 255, 255, 0.83),
       inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(8.5px);
+
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-2px -3px 6px rgba(255, 255, 255, 0.38));
     padding: rem(22);
     border-radius: rem(25);
     position: relative;
     z-index: 2;
     transition: color 0.3s ease 0s;
-
+    @include adaptiveValue('margin-bottom', 30, 20);
     @media (min-width: em(1300)) {
       width: rem(270);
     }
@@ -1145,6 +1036,119 @@
   &__place-email {
     pointer-events: none;
     font-size: rem(16);
+  }
+
+  &__box {
+    transform: translate(-60px, -25px);
+    position: relative;
+    z-index: 1;
+    @media (max-width: em(1300)) {
+      transform: translate(100px);
+    }
+    @media (max-width: $mobile) {
+      transform: translate(170px);
+    }
+    svg {
+      width: rem(1939);
+      height: rem(1033);
+      transition: all 0.3s ease 0s;
+      @media (max-width: em(1300)) {
+        @include adaptiveValue('width', 1400, 650);
+        @include adaptiveValue('height', 1033, 349);
+      }
+    }
+    svg path {
+      transition: all 0.3s ease 0s;
+      position: relative;
+      &::after {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8965 20.6377C14.4188 19.8508 19.7904 16.7027 19.7904 11.4582C19.7904 7.43109 16.5258 4.1665 12.4987 4.1665C8.47162 4.1665 5.20703 7.43109 5.20703 11.4582C5.20703 16.7027 10.5785 19.8508 12.1009 20.6377C12.354 20.7685 12.6434 20.7685 12.8965 20.6377ZM12.4987 14.5832C14.2246 14.5832 15.6237 13.1841 15.6237 11.4582C15.6237 9.73228 14.2246 8.33317 12.4987 8.33317C10.7728 8.33317 9.3737 9.73228 9.3737 11.4582C9.3737 13.1841 10.7728 14.5832 12.4987 14.5832Z' fill='%23333333'/%3E%3Cpath d='M12.8965 20.6377L13.172 21.1707H13.172L12.8965 20.6377ZM12.1009 20.6377L11.8254 21.1707H11.8254L12.1009 20.6377ZM19.1904 11.4582C19.1904 13.8622 17.9609 15.817 16.489 17.2963C15.0177 18.775 13.3553 19.7251 12.621 20.1047L13.172 21.1707C13.96 20.7634 15.7445 19.7459 17.3396 18.1427C18.9341 16.5402 20.3904 14.2987 20.3904 11.4582H19.1904ZM12.4987 4.7665C16.1944 4.7665 19.1904 7.76247 19.1904 11.4582H20.3904C20.3904 7.09972 16.8571 3.5665 12.4987 3.5665V4.7665ZM5.80703 11.4582C5.80703 7.76247 8.80299 4.7665 12.4987 4.7665V3.5665C8.14025 3.5665 4.60703 7.09972 4.60703 11.4582H5.80703ZM12.3764 20.1047C11.6421 19.7251 9.97965 18.775 8.50842 17.2963C7.03653 15.817 5.80703 13.8622 5.80703 11.4582H4.60703C4.60703 14.2987 6.06329 16.5402 7.65775 18.1427C9.25287 19.7459 11.0374 20.7634 11.8254 21.1707L12.3764 20.1047ZM12.621 20.1047C12.5407 20.1462 12.4567 20.1462 12.3764 20.1047L11.8254 21.1707C12.2513 21.3908 12.7461 21.3908 13.172 21.1707L12.621 20.1047ZM15.0237 11.4582C15.0237 12.8527 13.8932 13.9832 12.4987 13.9832V15.1832C14.556 15.1832 16.2237 13.5154 16.2237 11.4582H15.0237ZM12.4987 8.93317C13.8932 8.93317 15.0237 10.0637 15.0237 11.4582H16.2237C16.2237 9.40091 14.556 7.73317 12.4987 7.73317V8.93317ZM9.9737 11.4582C9.9737 10.0637 11.1042 8.93317 12.4987 8.93317V7.73317C10.4414 7.73317 8.7737 9.40091 8.7737 11.4582H9.9737ZM12.4987 13.9832C11.1042 13.9832 9.9737 12.8527 9.9737 11.4582H8.7737C8.7737 13.5154 10.4414 15.1832 12.4987 15.1832V13.9832Z' fill='%23333333'/%3E%3C/svg%3E%0A");
+        width: rem(25);
+        height: rem(25);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    svg path.active {
+      cursor: pointer;
+    }
+    svg path.filled {
+      fill: #4d64aa;
+    }
+    svg path.active:hover {
+      fill: #4d64aa;
+    }
+  }
+
+  &__balloon {
+    position: absolute;
+    pointer-events: none;
+    @media (min-width: em(1300)) {
+      display: none;
+    }
+  }
+
+  .balloon {
+    &-cis {
+      top: percent(230, 460);
+      left: percent(240, 655);
+    }
+    &-germany {
+      top: percent(215, 460);
+      left: percent(52, 655);
+      @media (min-width: $mobile) {
+        left: percent(55, 655);
+        top: percent(220, 460);
+      }
+    }
+    &-europe {
+      top: percent(235, 460);
+      left: percent(28, 655);
+      @media (min-width: $mobile) {
+        left: percent(30, 655);
+        top: percent(240, 460);
+      }
+    }
+    &-middleEast {
+      top: percent(275, 460);
+      left: percent(130, 655);
+      @media (min-width: $mobile) {
+        top: percent(273, 460);
+        left: percent(135, 655);
+      }
+    }
+    &-rakez {
+      top: percent(342, 460);
+      left: percent(194, 655);
+      @media (min-width: $mobile) {
+        top: percent(335, 460);
+        left: percent(195, 655);
+      }
+    }
+    &-southEast {
+      top: percent(342, 460);
+      left: percent(275, 655);
+    }
+  }
+
+  &__more {
+    color: #4d64aa;
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #5b79d1;
+      }
+    }
+    svg {
+      fill: currentColor;
+    }
   }
 }
 

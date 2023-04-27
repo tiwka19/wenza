@@ -12,6 +12,10 @@
     row-gap: rem(15);
     font-weight: 600;
     letter-spacing: 0.015em;
+    @media (max-width:$mobileSmall){
+       font-size: rem(14); 
+    }
+   
   }
   &__nav-item--separate {
     @media (min-width: $tablet) {
@@ -52,9 +56,9 @@
   &__callback-item {
     &:not(:last-child) {
       margin-bottom: rem(15);
-			@media (max-width:$tablet){
-				margin-bottom: rem(0);
-			}
+      @media (max-width: $tablet) {
+        margin-bottom: rem(0);
+      }
     }
   }
   &__callback {
@@ -69,7 +73,6 @@
     display: inline-flex;
     align-items: center;
     gap: rem(8);
-    font-family: Halvar;
     transition: color 0.2s ease 0s;
     @include adaptiveValue('font-size', 20, 14);
     line-height: math.div(26, 20);
