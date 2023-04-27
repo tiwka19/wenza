@@ -2,6 +2,7 @@
 import { isMobile } from './functions.js';
 // Підключення списку активних модулів
 import { flsModules } from './modules.js';
+import ScrollReveal from 'scrollreveal';
 
 // let marker = document.querySelector('.marker')
 // let item = document.querySelectorAll('.menu__item')
@@ -40,8 +41,14 @@ if (window.matchMedia('(max-width: 1300px)').matches) {
     let targetItem = e.target;
     if (targetItem.classList.contains('map__place')) {
       places.forEach((place) => {
-        if (targetItem.dataset.map == place.id) {
+        if (targetItem.dataset.map === place.id) {
           place.classList.add('filled');
+          let event = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+          });
+          place.dispatchEvent(event);
         } else {
           place.classList.remove('filled');
         }
@@ -52,14 +59,26 @@ if (window.matchMedia('(max-width: 1300px)').matches) {
   });
 }
 
-
 const callbackInputs = document.querySelectorAll('.callback__input');
-callbackInputs.forEach(input => {
+callbackInputs.forEach((input) => {
   input.addEventListener('input', (e) => {
-    if(input.value.trim() !== '') {
-      input.parentNode.classList.add('_active')
+    if (input.value.trim() !== '') {
+      input.parentNode.classList.add('_active');
     } else {
       input.parentNode.classList.remove('_active');
     }
-  })
-})
+  });
+});
+
+const sr = ScrollReveal({
+  origin: 'bottom',
+  distance: '30px',
+  duration: 800,
+  delay: 200,
+});
+
+sr.reveal(`.revenue, .benefits, .produce, section.callback, .portfolio, advantages, .team`, { reset: false });
+sr.reveal('.revenue__step, .portfolio__item, .advantages__item, .team__item', { interval: 200 });
+sr.reveal('.benefits__item, .work__step', { interval: 200, origin: 'right' });
+sr.reveal('.revenue__decor', { origin: 'right', delay: 800 });
+sr.reveal('.benefits__decor', { origin: 'left', delay: 800 });

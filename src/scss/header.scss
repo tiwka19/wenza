@@ -5,13 +5,15 @@
   top: 0;
   left: 0;
   width: 100%;
-
   transition: all 0.2s ease 0s;
   z-index: 150;
+  @media (max-width: $mobile) {
+    padding: rem(25) 0;
+  }
   &::after {
     content: '';
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -19,7 +21,7 @@
     opacity: 0;
     transition: opacity 0.8s ease 0s;
     pointer-events: none;
-    z-index: 150;
+    z-index: 149;
     .menu-open & {
       opacity: 1;
     }
@@ -58,16 +60,25 @@
     display: flex;
     align-items: center;
     gap: rem(30);
-
     padding-bottom: 0;
+
     @media (max-width: em(1180)) {
       flex-direction: column;
       align-items: flex-start;
+      display: none;
+      &--mobile {
+        display: flex;
+      }
     }
     @media (max-width: $pc) {
       gap: rem(15);
     }
     &__item-location {
+      @media (min-width: em(1180)) {
+        display: none;
+      }
+    }
+    &--mobile {
       @media (min-width: em(1180)) {
         display: none;
       }
@@ -131,11 +142,6 @@
       .menu-open &::before {
         right: 0;
       }
-    }
-    @media (max-width: $mobile) {
-      width: 100%;
-      height: 100%;
-      border-radius: 0;
     }
   }
   &__list {
