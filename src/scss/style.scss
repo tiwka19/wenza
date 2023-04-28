@@ -8,8 +8,8 @@
 @import 'fonts/icons';
 
 // Basic Setup ==============================================================================================================================================================================================================================================================================
-$fontFamily: Futura;
-$fontFamilyHeading: Halvar;
+$fontFamily: FuturaPT;
+$fontFamilyHeading: Halvar Breitschrift;
 $fontSize: rem(20);
 
 // Основні кольори
@@ -54,6 +54,7 @@ $responsiveType: 1;
 body {
   background-color: var(--bg-primary);
   line-height: math.div(26, 20);
+  font-weight: 400;
   &::after {
     content: '';
     background-color: rgba(0, 0, 0, 0.3);

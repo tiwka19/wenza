@@ -702,6 +702,7 @@
     @media (max-width: $mobile) {
       display: grid;
       flex: 0 0 50px;
+      height: rem(50);
     }
   }
   &__image {
@@ -835,8 +836,16 @@
   &__wrapper {
     display: flex;
     align-items: center;
+
     @media (max-width: em(1300)) {
       flex-direction: column;
+    }
+  }
+
+  &__more {
+    padding-top: rem(15);
+    @media (min-width: $mobile) {
+      display: none;
     }
   }
 
@@ -846,10 +855,11 @@
       grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       border-radius: rem(25);
-      gap: rem(5);
+      gap: rem(15);
     }
     @media (max-width: $mobile) {
       grid-template-columns: 1fr;
+      gap: 0;
     }
   }
 

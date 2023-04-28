@@ -1,14 +1,42 @@
 @font-face {
-	font-family: Futura;
+	font-family: FuturaPT;
 	font-display: swap;
-	src: url("../fonts/Futura.woff2") format("woff2"), url("../fonts/Futura.woff") format("woff");
+	src: url("../fonts/FuturaPT-Book.woff2") format("woff2"), url("../fonts/FuturaPT-Book.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
-	font-family: Halvar;
+	font-family: FuturaPT;
 	font-display: swap;
-	src: url("../fonts/Halvar.woff2") format("woff2"), url("../fonts/Halvar.woff") format("woff");
+	src: url("../fonts/FuturaPT-Heavy.woff2") format("woff2"), url("../fonts/FuturaPT-Heavy.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: FuturaPT;
+	font-display: swap;
+	src: url("../fonts/FuturaPT-Medium.woff2") format("woff2"), url("../fonts/FuturaPT-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: Halvar Breitschrift;
+	font-display: swap;
+	src: url("../fonts/Halvar Breitschrift-Bold-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Bold-Web.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: Halvar Breitschrift;
+	font-display: swap;
+	src: url("../fonts/Halvar Breitschrift-Medium-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Medium-Web.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: Halvar Breitschrift;
+	font-display: swap;
+	src: url("../fonts/Halvar Breitschrift-Regular-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Regular-Web.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
