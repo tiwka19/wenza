@@ -70,18 +70,23 @@ callbackInputs.forEach((input) => {
   });
 });
 
-if (window.matchMedia('(min-width: 768px)').matches) {
-  const sr = ScrollReveal({
-    origin: 'bottom',
-    distance: '30px',
-    duration: 800,
-    delay: 200,
-    reset: false,
-  });
 
-  sr.reveal(`.revenue, .benefits, .produce, section.callback, .portfolio, advantages, .team`);
-  sr.reveal('.revenue__step, .portfolio__item, .advantages__item, .team__item', { interval: 200 });
-  sr.reveal('.benefits__item, .work__step', { interval: 200, origin: 'right' });
-  sr.reveal('.revenue__decor', { origin: 'right', delay: 800 });
-  sr.reveal('.benefits__decor', { origin: 'left', delay: 800 });
-}
+window.addEventListener('load', () => {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '30px',
+      duration: 800,
+      delay: 200,
+      reset: false,
+    });
+  
+    sr.reveal(`.revenue, .benefits, .produce, section.callback, .portfolio, advantages, .team`);
+    sr.reveal('.revenue__step, .portfolio__item, .advantages__item, .team__item', { interval: 200 });
+    sr.reveal('.benefits__item, .work__step', { interval: 200, origin: 'right' });
+    sr.reveal('.revenue__decor', { origin: 'right', delay: 800 });
+    sr.reveal('.benefits__decor', { origin: 'left', delay: 800 });
+  }
+})
+
+
