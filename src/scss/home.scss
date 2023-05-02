@@ -841,7 +841,7 @@
 .team {
   @include adaptiveValue('padding-bottom', 100, 50);
   &__title {
-    margin-bottom: rem(25);
+    margin-bottom: rem(25) !important;
   }
   &__subtitle {
     @include adaptiveValue('margin-bottom', 80, 25);
