@@ -248,9 +248,11 @@
     &::after {
       content: '';
       position: absolute;
-      width: 110%;
-      height: 110%;
-      background: url('@img/benefits-big.svg') no-repeat center;
+      // width: 573px;
+      @include adaptiveValue("width", 573, 280);
+      @include adaptiveValue("height", 573, 280);
+      // height: 573px;
+      background: url('@img/benefits-big.svg') no-repeat;
       background-size: contain;
       z-index: -1;
     }
@@ -337,7 +339,7 @@
       bottom: 0;
       left: 0;
       z-index: -2;
-      transform: translate(-150px, 50px);
+      transform: translate(-180px, 50px);
       img {
         max-width: 100%;
         height: auto;
@@ -345,15 +347,15 @@
       &::before {
         content: '';
         position: absolute;
-        @include adaptiveValue('top', -150, -50);
+        @include adaptiveValue('top', -200, -50);
         left: 50%;
-        transform: translate(calc(-50% + 150px));
+        transform: translate(calc(-50% + 180px));
         @include adaptiveValue('width', 500, 270);
         @include adaptiveValue('height', 700, 230);
         background: url('@img/why-mask-mobile.svg') 0 0 no-repeat;
         background-size: contain;
         background-position: center center;
-        z-index: -2;
+        z-index: -20;
       }
     }
     @media (max-width: $mobile) {
