@@ -108,3 +108,5 @@ window.addEventListener('load', () => {
     sr.reveal('.benefits__decor', { origin: 'left', delay: 800 });
   }
 });
+
+
