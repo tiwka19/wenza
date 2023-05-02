@@ -539,10 +539,9 @@
   &__items {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    @include adaptiveValue('gap', 40, 15);
-    @media (max-width: $pc) {
-      grid-template-columns: repeat(4, 1fr);
-    }
+    gap: rem(40);
+    @include adaptiveValue('gap', 40, 15, 3, 1540, 992);
+    
     @media (max-width: $tablet) {
       grid-template-columns: repeat(3, 1fr);
     }
