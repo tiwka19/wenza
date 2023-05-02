@@ -6,9 +6,9 @@
   padding: rem(16) rem(36);
   background-color: var(--bg-accent);
   transition: background-color 0.3s ease 0s;
-  @media (any-hover: hover){
-    &:hover{
-      background-color: #4D64AA;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #4d64aa;
     }
   }
   border-radius: 50px;
@@ -17,13 +17,10 @@
   line-height: math.div(37, 32);
   font-weight: 500;
   font-family: $fontFamilyHeading;
-  @media (max-width:$mobile){
-     padding: rem(8) rem(24); 
+  @media (max-width: $mobile) {
+    padding: rem(8) rem(24);
   }
-  @media (any-hover: hover) {
-    &:hover {
-    }
-  }
+
   &._fw {
     width: 100%;
   }

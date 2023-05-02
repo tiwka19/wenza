@@ -471,6 +471,20 @@
     }
   }
 
+  &__button {
+    background-color: #cecece;
+    pointer-events: none;
+    &._active {
+      background-color: #2e2d2c;
+      pointer-events: auto;
+      @media (any-hover: hover){
+        &:hover{
+          background-color: #4d64aa;
+        }
+      }
+    }
+  }
+
   &__label {
     position: relative;
     border-bottom: 1px solid #2e2d2c;
@@ -842,8 +856,6 @@
     }
   }
 
-  
-
   &__places {
     @media (max-width: em(1300)) {
       display: grid;
@@ -1155,8 +1167,8 @@
     svg {
       fill: currentColor;
     }
-    @media (min-width:$mobile){
-       display: none; 
+    @media (min-width: $mobile) {
+      display: none;
     }
   }
 }

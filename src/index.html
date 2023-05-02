@@ -326,21 +326,24 @@
               <div class="callback__inner">
                 <h2 class="callback__title">We know how to handle any of your metalworking problems</h2>
                 <p class="callback__descr">Contact us and get a free consultation to help you plan and execute your metalworking projects.</p>
-                <form class="callback__inputs">
-                  <label for="name" class="callback__label">
-                    <input type="text" id="name" class="callback__input input" placeholder="Your name" />
-                    <span>Your name</span>
-                  </label>
-                  <label for="phone" class="callback__label">
-                    <input type="text" id="phone" class="callback__input input" placeholder="Your phone" />
-                    <span>Your phone</span>
-                  </label>
-                  <label for="email" class="callback__label">
-                    <input type="email" id="email" class="callback__input input" placeholder="Your email" />
-                    <span>Your email</span>
-                  </label>
+                <form action="" class='callback__form'>
+                  <div class="callback__inputs">
+                    <label for="name" class="callback__label">
+                      <input type="text" id="name" class="callback__input input" placeholder="Your name" />
+                      <span>Your name</span>
+                    </label>
+                    <label for="phone" class="callback__label">
+                      <input type="text" id="phone" class="callback__input input" placeholder="Your phone" />
+                      <span>Your phone</span>
+                    </label>
+                    <label for="email" class="callback__label">
+                      <input type="email" id="email" class="callback__input input" placeholder="Your email" />
+                      <span>Your email</span>
+                    </label>
+                  </div>
+
+                  <button class="callback__button button">contact us</button>
                 </form>
-                <button class="callback__button button">contact us</button>
               </div>
             </div>
           </div>
@@ -612,7 +615,7 @@
             </div>
           </div>
         </section>
-        <section class="callback">
+        <section class="callback" id="callback">
           <div class="callback__container">
             <div class="callback__wrapper">
               <div class="callback__inner">
@@ -620,7 +623,7 @@
                 <p class="callback__descr">
                   We are ready to send samples of our products so that you are convinced of the excellent quality of Wenza products
                 </p>
-                <form class="callback__inputs">
+                <form class="callback__inputs" id="callback_form">
                   <label for="name2" class="callback__label">
                     <input type="text" id="name2" class="callback__input input" placeholder="Your name" />
                     <span>Your name</span>
@@ -633,8 +636,8 @@
                     <input type="email" id="email2" class="callback__input input" placeholder="Your email" />
                     <span>Your email</span>
                   </label>
+                  <button class="callback__button button">contact us</button>
                 </form>
-                <button class="callback__button button">contact us</button>
               </div>
             </div>
           </div>
@@ -965,7 +968,7 @@
             <h2 class="map__title _section-title">Wenza is Working Worldwide</h2>
             <div class="map__wrapper">
               <div class="map__places-wrapper" data-showmore="items" data-showmore-media="768,max">
-                <ul class="map__places" data-showmore-content='2'>
+                <ul class="map__places" data-showmore-content="2">
                   <li class="map__place map-cis" data-map="cis" data-goto=".map__box" data-goto-header>
                     <div class="map__place-title">CIS countries</div>
                     <div class="map__place-phone">Phone number: +49 8031 2821466</div>

@@ -70,6 +70,26 @@ callbackInputs.forEach((input) => {
   });
 });
 
+// получаем все формы на странице
+const forms = document.querySelectorAll('form');
+
+// обходим каждую форму и добавляем обработчики событий на каждый инпут
+forms.forEach((form) => {
+  const formInputs = form.querySelectorAll('.callback__input');
+  const formButton = form.querySelector('.callback__button');
+  formInputs.forEach((input) => {
+    input.addEventListener('input', () => {
+      const isFormFilled = Array.from(formInputs).every((input) => input.value !== '');
+      if (isFormFilled) {
+        document.querySelector('.callback__inputs').classList.add('_success');
+        formButton.classList.add('_active');
+      } else {
+        document.querySelector('.callback__inputs').classList.remove('_success');
+        formButton.classList.remove('_active');
+      }
+    });
+  });
+});
 
 window.addEventListener('load', () => {
   if (window.matchMedia('(min-width: 768px)').matches) {
@@ -80,13 +100,11 @@ window.addEventListener('load', () => {
       delay: 200,
       reset: false,
     });
-  
+
     sr.reveal(`.revenue, .benefits, .produce, section.callback, .portfolio, advantages, .team`);
     sr.reveal('.revenue__step, .portfolio__item, .advantages__item, .team__item', { interval: 200 });
     sr.reveal('.benefits__item, .work__step', { interval: 200, origin: 'right' });
     sr.reveal('.revenue__decor', { origin: 'right', delay: 800 });
     sr.reveal('.benefits__decor', { origin: 'left', delay: 800 });
   }
-})
-
-
+});
