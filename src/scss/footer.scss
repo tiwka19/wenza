@@ -76,6 +76,9 @@
     transition: color 0.2s ease 0s;
     @include adaptiveValue('font-size', 20, 14);
     line-height: math.div(26, 20);
+    span {
+      font-size: rem(24);
+    }
     @media (any-hover: hover) {
       &:hover {
         color: var(--text-accent);
