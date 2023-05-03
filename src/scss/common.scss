@@ -1,10 +1,30 @@
 // Заголовки, загальні БЕМ блоки та інше...
 ._section-title {
-	@include adaptiveValue('font-size', 64, 20);
-	line-height: math.div(79, 64);
-	@include adaptiveValue('margin-bottom', 60, 30);
-	font-family: $fontFamilyHeading;
-	@media (max-width:$mobile){
-		 text-align: center; 
-	}
+  @include adaptiveValue('font-size', 64, 20);
+  line-height: math.div(79, 64);
+  @include adaptiveValue('margin-bottom', 60, 30);
+  font-family: $fontFamilyHeading;
+  @media (max-width: $mobile) {
+    text-align: center;
+  }
+}
+
+.menu-item-40 {
+  margin-left: auto;
+  transition: color 0.2s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--text-accent);
+    }
+  }
+}
+
+.wpcf7-response-output {
+  display: none !important;
+}
+
+
+.just-validate-error-label {
+	position: absolute;
+	bottom: -30px;
 }

@@ -77,6 +77,7 @@
 		"isotope-layout": "^3.0.6",
 		"just-validate": "^4.2.0",
 		"scrollreveal": "^4.0.9",
-		"simplebar": "latest"
+		"simplebar": "latest",
+		"toastify-js": "^1.12.0"
 	}
 }

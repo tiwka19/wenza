@@ -3,20 +3,8 @@ import { isMobile } from './functions.js';
 // Підключення списку активних модулів
 import { flsModules } from './modules.js';
 import ScrollReveal from 'scrollreveal';
-
-// let marker = document.querySelector('.marker')
-// let item = document.querySelectorAll('.menu__item')
-// function indicator(navbarElement) {
-// 	marker.style.left = navbarElement.offsetLeft + 'px'
-// 	marker.style.width = navbarElement.offsetWidth + 'px'
-// }
-// item.forEach(link => {
-// 	link.classList.remove('_active')
-// 	link.addEventListener('click', e => {
-// 		indicator(e.target)
-// 		marker.querySelector('.marker__wrapper').classList.add('_active')
-// 	})
-// })
+import Toastify from 'toastify-js';
+import JustValidate from 'just-validate';
 
 let map = document.querySelector('.map');
 let places = document.querySelectorAll('.map__box svg path.active');
@@ -87,7 +75,64 @@ forms.forEach((form) => {
         document.querySelector('.callback__inputs').classList.remove('_success');
         formButton.classList.remove('_active');
       }
+      if (input.name === 'phone') {
+        const input = document.getElementById('phone');
+        input.addEventListener('input', () => {
+          let phoneNumber = input.value.replace(/\D/g, '');
+          if (phoneNumber.length > 0 && phoneNumber[0] !== '+') {
+            phoneNumber = '+' + phoneNumber;
+          }
+          phoneNumber = phoneNumber.slice(0, 2) + ' (' + phoneNumber.slice(2, 5) + ') ' + phoneNumber.slice(5, 8) + '-' + phoneNumber.slice(8, 12);
+          input.value = phoneNumber;
+        });
+
+        input.addEventListener('keydown', (event) => {
+          if (
+            isNaN(event.key) &&
+            event.key !== 'Backspace' &&
+            event.key !== 'Delete' &&
+            event.key !== 'ArrowLeft' &&
+            event.key !== 'ArrowRight' &&
+            event.key !== 'Tab'
+          ) {
+            event.preventDefault();
+          }
+        });
+      }
     });
+  });
+});
+
+const contactForms = document.querySelectorAll('.wpcf7');
+contactForms.forEach((form) => {
+  form.querySelector('button[type="submit"]').addEventListener('click', function () {
+    this.textContent = 'Please, wait...';
+  });
+  form.addEventListener('wpcf7mailsent', (e) => {
+    Toastify({
+      text: 'Application sent',
+      duration: 6000,
+      fontSize: 30,
+      gravity: 'bottom',
+      position: 'center',
+      style: {
+        background: '#4d64aa',
+      },
+    }).showToast();
+    form.querySelector('button[type="submit"]').textContent = 'Contact us';
+  });
+
+  form.addEventListener('wpcf7mailfailed', (e) => {
+    Toastify({
+      text: 'Application failed',
+      duration: 6000,
+      fontSize: 30,
+      gravity: 'top',
+      position: 'right',
+      style: {
+        background: '#080708',
+      },
+    }).showToast();
   });
 });
 
@@ -108,5 +153,3 @@ window.addEventListener('load', () => {
     sr.reveal('.benefits__decor', { origin: 'left', delay: 800 });
   }
 });
-
-

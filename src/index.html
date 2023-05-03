@@ -88,7 +88,6 @@
                   <source srcset="@img/revenue.png" media="(min-width: 768px)">
                   <img src="@img/revenue-mobile.png" alt="MDN">
                  </picture>
-                
               </div>
             </div>
           </div>
@@ -330,18 +329,18 @@
               <div class="callback__inner">
                 <h2 class="callback__title">We know how to handle any of your metalworking problems</h2>
                 <p class="callback__descr">Contact us and get a free consultation to help you plan and execute your metalworking projects.</p>
-                <form action="" class="callback__form">
+                <form action="" class="callback__form" novalidate id='callbackForm'>
                   <div class="callback__inputs">
                     <label for="name" class="callback__label">
-                      <input type="text" id="name" class="callback__input input" placeholder="Your name" />
+                      <input type="text"  id="name" class="callback__input input" placeholder="Your name" />
                       <span>Your name</span>
                     </label>
                     <label for="phone" class="callback__label">
-                      <input type="text" id="phone" class="callback__input input" placeholder="Your phone" />
+                      <input type='tel' name='phone' id="phone" class="callback__input input" placeholder="Your phone" />
                       <span>Your phone</span>
                     </label>
                     <label for="email" class="callback__label">
-                      <input type="email" id="email" class="callback__input input" placeholder="Your email" />
+                      <input type="email" name='email' id="email" class="callback__input input" placeholder="Your email" />
                       <span>Your email</span>
                     </label>
                   </div>
