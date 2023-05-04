@@ -103,38 +103,7 @@ forms.forEach((form) => {
   });
 });
 
-const contactForms = document.querySelectorAll('.wpcf7');
-contactForms.forEach((form) => {
-  form.querySelector('button[type="submit"]').addEventListener('click', function () {
-    this.textContent = 'Please, wait...';
-  });
-  form.addEventListener('wpcf7mailsent', (e) => {
-    Toastify({
-      text: 'Application sent',
-      duration: 6000,
-      fontSize: 30,
-      gravity: 'bottom',
-      position: 'center',
-      style: {
-        background: '#4d64aa',
-      },
-    }).showToast();
-    form.querySelector('button[type="submit"]').textContent = 'Contact us';
-  });
 
-  form.addEventListener('wpcf7mailfailed', (e) => {
-    Toastify({
-      text: 'Application failed',
-      duration: 6000,
-      fontSize: 30,
-      gravity: 'top',
-      position: 'right',
-      style: {
-        background: '#080708',
-      },
-    }).showToast();
-  });
-});
 
 window.addEventListener('load', () => {
   if (window.matchMedia('(min-width: 768px)').matches) {

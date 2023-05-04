@@ -535,6 +535,17 @@
       background-color: #2e2d2c;
       border-radius: 50%;
     }
+
+    &._form-error {
+      color: #dc4133;
+      border-bottom: 1px solid #dc4133;
+      .callback__input {
+        color: #dc4133;
+      }
+      &::after {
+        background-color: #dc4133;
+      }
+    }
   }
 }
 

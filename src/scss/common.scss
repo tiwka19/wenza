@@ -19,12 +19,9 @@
   }
 }
 
-.wpcf7-response-output {
-  display: none !important;
-}
 
-
-.just-validate-error-label {
+.form__error {
 	position: absolute;
-	bottom: -30px;
+	bottom : -30px;
+	color: #dc4133;
 }
