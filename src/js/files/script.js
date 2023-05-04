@@ -58,10 +58,7 @@ callbackInputs.forEach((input) => {
   });
 });
 
-// получаем все формы на странице
 const forms = document.querySelectorAll('form');
-
-// обходим каждую форму и добавляем обработчики событий на каждый инпут
 forms.forEach((form) => {
   const formInputs = form.querySelectorAll('.callback__input');
   const formButton = form.querySelector('.callback__button');
@@ -76,7 +73,6 @@ forms.forEach((form) => {
         formButton.classList.remove('_active');
       }
       if (input.name === 'phone') {
-        const input = document.getElementById('phone');
         input.addEventListener('input', () => {
           let phoneNumber = input.value.replace(/\D/g, '');
           if (phoneNumber.length > 0 && phoneNumber[0] !== '+') {
@@ -103,7 +99,44 @@ forms.forEach((form) => {
   });
 });
 
-
+const formSubmitting = () => {
+  let forms = document.querySelectorAll('.wpcf7');
+  forms.forEach((form) => {
+    let submitBtn = form.querySelector('input[type="submit"]');
+    submitBtn.addEventListener('click', () => {
+      submitBtn.value = 'Please, wait...';
+    });
+    form.querySelector('input[name="email"]').setAttribute('data-required', 'email');
+    form.querySelector('input[name="email"]').setAttribute('data-error', 'Invalid email');
+    form.addEventListener(
+      'wpcf7mailsent',
+      (e) => {
+        submitBtn.value = 'contact us';
+        document.querySelectorAll('.callback__label').forEach((label) => label.classList.remove('_active'));
+        Toastify({
+          text: 'Application accepted, thank you!',
+          duration: 6000,
+          fontSize: 30,
+          gravity: 'bottom',
+          position: 'center',
+          style: {
+            background: '#4D64AA',
+          },
+        }).showToast();
+      },
+      false,
+    );
+    form.addEventListener(
+      'wpcf7invalid',
+      () => {
+        submitBtn.value = 'contact us';
+        submitBtn.disabled = false;
+      },
+      false,
+    );
+  });
+};
+formSubmitting();
 
 window.addEventListener('load', () => {
   if (window.matchMedia('(min-width: 768px)').matches) {

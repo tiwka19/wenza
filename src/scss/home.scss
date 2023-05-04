@@ -23,6 +23,7 @@
     gap: rem(30);
     @media (max-width: $mobile) {
       flex-direction: column;
+      gap: rem(15);
     }
   }
   &__data {
@@ -36,7 +37,7 @@
     }
   }
   &__title {
-    @include adaptiveValue('font-size', 80, 30);
+    @include adaptiveValue('font-size', 80, 26);
     line-height: math.div(99, 80);
     @include adaptiveValue('margin-bottom', 40, 10);
     font-family: $fontFamilyHeading;
@@ -45,7 +46,7 @@
     }
   }
   &__subtitle {
-    @include adaptiveValue('font-size', 38, 24);
+    @include adaptiveValue('font-size', 38, 20);
     line-height: math.div(46, 38);
     @include adaptiveValue('margin-bottom', 70, 15);
     @media (max-width: $mobile) {
@@ -58,10 +59,13 @@
     @media (min-width: $mobile) {
       animation: float 3s infinite ease-in-out;
     }
-    flex: 0 0 percent(600, 1595);
+    flex: 0 0 percent(630, 1595);
     img {
       max-width: 100%;
       height: auto;
+      @media (max-width: $mobileSmall) {
+        max-width: rem(250);
+      }
     }
   }
   @keyframes float {
@@ -202,8 +206,8 @@
     right: 0;
     z-index: -1;
     @include adaptiveValue('bottom', -100, -10);
-    transform: translateX(160px);
-    @include adaptiveValue('max-width', 750, 620, 3, 1595, 1180);
+    transform: translateX(380px);
+
     @media (max-width: em(1180)) {
       position: relative;
       bottom: 0;
@@ -216,8 +220,6 @@
       height: 100%;
       object-fit: cover;
     }
-    @media (max-width: $mobile) {
-    }
   }
 }
 
@@ -229,31 +231,55 @@
     align-items: center;
     @media (max-width: em(1180)) {
       flex-direction: column;
+      gap: rem(60);
     }
   }
   &__inner {
     position: relative;
   }
   &__data {
+    margin-left: rem(20);
     position: relative;
-    @include adaptiveValue('width', 530, 260);
-    @include adaptiveValue('height', 530, 260);
+    width: rem(530);
+    @include adaptiveValue('width', 530, 242, 3, 1180, 320);
+    @include adaptiveValue('height', 530, 242, 3, 1180, 320);
+    height: rem(530);
+
     display: grid;
     place-items: center;
     z-index: 10;
     background: url('@img/benefits-small.svg') 0 0 no-repeat;
-    background-size: contain;
+    background-size: cover;
     border-radius: 50%;
     backdrop-filter: blur(10px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: -390px;
+      top: -135px;
+      width: 665px;
+      height: 800px;
+      background-image: url('@img/why-mask.svg');
+      background-size: cover;
+      z-index: -5;
+      @media (max-width: em(1500)) {
+        top: -135px;
+      }
+      @media (max-width: em(1180)) {
+        display: none;
+      }
+    }
 
     &::after {
       content: '';
       position: absolute;
-      @include adaptiveValue('width', 550, 280);
-      @include adaptiveValue('height', 550, 280);
+      width: rem(573);
+      height: rem(573);
+      @include adaptiveValue('width', 573, 262, 3, 1180, 320);
+      @include adaptiveValue('height', 573, 262, 3, 1180, 320);
       background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
-
       z-index: -2;
     }
     @media (max-width: em(1180)) {
@@ -283,20 +309,6 @@
     @include adaptiveValue('gap', 60, 25);
     flex: 1 1 auto;
     position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      left: -270px;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: url('@img/why-mask.svg') 0 0 no-repeat;
-      background-position: left;
-      z-index: -3;
-      @media (max-width: em(1180)) {
-        display: none;
-      }
-    }
   }
   &__item {
     padding: rem(32);
@@ -336,33 +348,23 @@
     z-index: -3;
     @media (max-width: em(1180)) {
       position: relative;
+      margin-top: rem(15);
       bottom: 0;
       left: 0;
-      z-index: -2;
-      transform: translate(-180px, 50px);
+      z-index: 10;
+      transform: translateX(-150px) !important;
       img {
         max-width: 100%;
-        height: auto;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        @include adaptiveValue('top', -200, -50);
-        left: 50%;
-        transform: translate(calc(-50% + 180px));
-        @include adaptiveValue('width', 500, 270);
-        @include adaptiveValue('height', 700, 230);
-        background: url('@img/why-mask-mobile.svg') 0 0 no-repeat;
-        background-size: contain;
-        background-position: center center;
-        z-index: -20;
       }
     }
     @media (max-width: $mobile) {
-      transform: translateX(-30px) !important;
+      transform: translateX(-100px) !important;
       &::before {
         transform: translate(calc(-50% + 30px));
       }
+    }
+    @media (max-width: $mobileSmall) {
+      transform: translateX(-50px) !important;
     }
   }
 }
@@ -478,6 +480,7 @@
   &__button {
     background-color: #cecece;
     pointer-events: none;
+    cursor: pointer;
     &._active {
       background-color: #2e2d2c;
       pointer-events: auto;
@@ -775,7 +778,7 @@
 .advantages {
   @include adaptiveValue('padding-bottom', 100, 50);
   &__title {
-    margin-bottom: rem(20);
+    margin-bottom: rem(20) !important;
   }
   &__subtitle {
     @include adaptiveValue('margin-bottom', 80, 25);
@@ -859,6 +862,8 @@
     margin-bottom: rem(25) !important;
   }
   &__subtitle {
+    @include adaptiveValue('font-size', 28, 16);
+    line-height: math.div(35, 28);
     @include adaptiveValue('margin-bottom', 80, 25);
   }
   &__list {
@@ -895,9 +900,9 @@
   &__wrapper {
     display: flex;
     align-items: center;
-
     @media (max-width: em(1300)) {
       flex-direction: column;
+      gap: rem(30);
     }
   }
 
@@ -922,7 +927,7 @@
 
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-2px -3px 6px rgba(255, 255, 255, 0.38));
     padding: rem(22);
-    border-radius: rem(25);
+    border-radius: rem(15);
     position: relative;
     z-index: 2;
     transition: color 0.3s ease 0s;
@@ -945,6 +950,9 @@
       pointer-events: none;
       color: #fff;
       transition: color 0.2s ease 0s;
+      @media (max-width: em(1300)) {
+        display: none;
+      }
       &-cis {
         right: -125%;
         top: 55px;
@@ -1002,6 +1010,9 @@
         color: #5b79d1;
       }
     }
+    &.active {
+      color: #5b79d1;
+    }
   }
 
   &__place-title {
@@ -1025,6 +1036,7 @@
     z-index: 1;
     @media (max-width: em(1300)) {
       transform: translate(100px);
+      order: -1;
     }
     @media (max-width: $mobile) {
       transform: translate(170px);

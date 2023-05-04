@@ -10,7 +10,12 @@
 }
 
 .menu-item-40 {
-  margin-left: auto;
+  @media (min-width: $tablet) {
+    margin-left: auto;
+  }
+}
+
+.menu-item {
   transition: color 0.2s ease 0s;
   @media (any-hover: hover) {
     &:hover {
@@ -19,9 +24,30 @@
   }
 }
 
+.wpcf7-response-output {
+  display: none;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
 
 .form__error {
-	position: absolute;
-	bottom : -30px;
-	color: #dc4133;
+  position: absolute;
+  bottom: -30px;
+  color: #dc4133;
+}
+
+.why-mask-mobile {
+  display: none;
+  @media (max-width: $mobileSmall) {
+    display: block;
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    height: 241px;
+    @media (max-width: $mobileSmall) {
+      height: 80%;
+    }
+  }
 }
