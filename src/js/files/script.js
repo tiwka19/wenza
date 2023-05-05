@@ -41,9 +41,7 @@ if (window.matchMedia('(max-width: 1300px)').matches) {
           place.classList.remove('filled');
         }
       });
-    } else {
-      places.forEach((place) => place.classList.remove('filled'));
-    }
+    } 
   });
 }
 

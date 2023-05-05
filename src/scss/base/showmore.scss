@@ -1,27 +1,29 @@
 [data-showmore] {
 }
 [data-showmore-content] {
-	display: block;
+  display: block;
+  margin-bottom: rem(30);
 }
 [data-showmore-button] {
-	span {
-		&:nth-child(2) {
-			display: none;
-		}
-		._showmore-active & {
-			display: none;
-			&:nth-child(2) {
-				display: block;
-			}
-		}
-	}
-	svg {
-		transition: transform 0.3s ease 0s;
-	}
+
+  span {
+    &:nth-child(2) {
+      display: none;
+    }
+    ._showmore-active & {
+      display: none;
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+  }
+  svg {
+    transition: transform 0.3s ease 0s;
+  }
 }
 
 ._showmore-active {
-	svg {
-		transform: rotate(180deg);
-	}
+  svg {
+    transform: rotate(180deg);
+  }
 }

@@ -83,6 +83,17 @@
 
 .revenue {
   padding-top: rem(50);
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -200px;
+    top: 500px;
+    width: rem(1483);
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0) 100%);
+  }
   @include adaptiveValue('padding-bottom', 120, 60);
   &__title {
     @media (max-width: $mobile) {
@@ -151,6 +162,9 @@
       font-size: rem(18);
       width: 100%;
     }
+    @media (max-width:$mobileSmall){
+       font-size: rem(16); 
+    }
   }
   &__step-value {
     position: relative;
@@ -191,6 +205,8 @@
     @media (max-width: $mobile) {
       display: grid;
       flex: 0 0 50px;
+      width: rem(50);
+      height: rem(50);
     }
   }
 
@@ -377,6 +393,7 @@
     align-items: center;
     gap: rem(30);
     margin-bottom: rem(30);
+    position: relative;
     @media (max-width: $mobile) {
       flex-direction: column;
       gap: rem(15);
@@ -390,6 +407,35 @@
       }
     }
   }
+
+  &__item:nth-child(3) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.3904) 0%, rgba(255, 255, 255, 0) 100%);
+      width: rem(600);
+      height: rem(600);
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+
+  &__item:nth-child(10) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+      width: rem(800);
+      height: rem(800);
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+
   &__item-title {
     @include adaptiveValue('font-size', 36, 18);
     line-height: math.div(44, 36);
@@ -432,7 +478,16 @@
 
 .callback {
   position: relative;
-
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    z-index: -1;
+    width: rem(758);
+    height: rem(748);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  }
   @include adaptiveValue('padding-bottom', 100, 50);
   &__wrapper {
     @include adaptiveValue('padding-top', 80, 30);
@@ -631,8 +686,19 @@
     display: flex;
     flex-direction: column;
     gap: rem(64);
+    position: relative;
     @include adaptiveValue('gap', 64, 30);
     width: 100%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -30%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
   }
   &__step {
     display: flex;
@@ -660,6 +726,11 @@
         }
       }
     }
+    @media (max-width: $mobile) {
+      &:nth-child(even) {
+        align-self: flex-start;
+      }
+    }
   }
 
   &__step-line {
@@ -683,7 +754,7 @@
   }
   &__step-title {
     font-family: $fontFamilyHeading;
-    @include adaptiveValue('font-size', 24, 18);
+    @include adaptiveValue('font-size', 24, 16);
     line-height: math.div(29, 20);
     margin-bottom: rem(15);
     @media (max-width: $mobile) {
@@ -695,10 +766,14 @@
   &__step-descr {
     @include adaptiveValue('font-size', 20, 18);
     line-height: math.div(26, 20);
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
   &__step-value {
     position: relative;
-    @include adaptiveValue('font-size', 48, 26);
+    font-size: rem(48);
+    @include adaptiveValue('font-size', 48, 24, 3, 1540, 768);
     line-height: math.div(60, 48);
     color: #fff;
     z-index: 2;
@@ -727,6 +802,7 @@
     }
     @media (max-width: $mobile) {
       display: none;
+      margin-left: 0;
     }
   }
 
@@ -734,8 +810,9 @@
     display: none;
     @media (max-width: $mobile) {
       display: grid;
-      flex: 0 0 50px;
+      width: rem(50);
       height: rem(50);
+      flex: 0 0 rem(50);
     }
   }
   &__image {
@@ -750,9 +827,9 @@
     &::after {
       content: '';
       position: absolute;
-      left: -530px;
-      top: 173px;
-      background: url('@img/work-mask.png') 0 0 no-repeat;
+      left: -500px;
+      top: 200px;
+      background: url('@img/hero-mask.svg') 0 0 no-repeat;
       width: 100%;
       height: 100%;
       z-index: -5;
@@ -1131,7 +1208,6 @@
     align-items: center;
     gap: rem(10);
     margin: 0 auto;
-    padding-top: rem(15);
     text-align: center;
     font-weight: 600;
     position: relative;
