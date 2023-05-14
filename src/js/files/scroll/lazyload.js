@@ -7,5 +7,4 @@ const lazyMedia = new LazyLoad({
 	use_native: true
 });
 
-// Оновити модуль
-//lazyMedia.update();
+lazyMedia.update();

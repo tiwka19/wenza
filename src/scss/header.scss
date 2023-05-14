@@ -62,7 +62,7 @@
     gap: rem(30);
     padding-bottom: 0;
 
-    &::after{
+    &::after {
       display: none;
     }
 
@@ -241,6 +241,7 @@
     display: block;
     position: absolute;
     right: rem(15);
+    height: rem(30);
   }
   &__dots {
     display: flex;

@@ -25,3 +25,11 @@
     width: 100%;
   }
 }
+
+.article__buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: rem(30);
+  column-gap: rem(15);
+}

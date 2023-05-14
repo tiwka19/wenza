@@ -42,14 +42,6 @@
   font-style: italic;
 }
 
-.markdown-body h1 {
-  font-weight: 600;
-  padding-bottom: 0.3em;
-  margin-bottom: rem(20);
-  font-size: 1.75em;
-  border-bottom: 1px solid var(--text-primary);
-}
-
 .markdown-body mark {
   background-color: rgba(187, 128, 9, 0.15);
   color: #c9d1d9;
@@ -233,36 +225,35 @@
 .markdown-body h6 {
   margin-top: 30px;
   margin-bottom: 15px;
-  font-weight: 600;
   line-height: 1.25;
+  font-family: $fontFamilyHeading;
+}
+
+.markdown-body h1 {
+  margin-bottom: rem(25);
+  font-family: $fontFamilyHeading;
+  @include adaptiveValue('font-size', 64, 30);
 }
 
 .markdown-body h2 {
-  font-weight: 600;
   padding-bottom: 0.3em;
   font-size: 1.4em;
-  border-bottom: 1px solid var(--text-primary);
 }
 
 .markdown-body h3 {
-  font-weight: 600;
   font-size: 1.3em;
 }
 
 .markdown-body h4 {
-  font-weight: 600;
   font-size: 1.2em;
 }
 
 .markdown-body h5 {
-  font-weight: 600;
   font-size: 0.875em;
 }
 
 .markdown-body h6 {
-  font-weight: 600;
   font-size: 0.85em;
-  color: #8b949e;
 }
 
 .markdown-body p {

@@ -9,7 +9,7 @@
   }
 }
 
-.menu-item-40 {
+.menu-item-28 {
   @media (min-width: $tablet) {
     margin-left: auto;
   }
@@ -50,4 +50,8 @@
       height: 80%;
     }
   }
+}
+
+.page-content article {
+  margin-bottom: rem(50);
 }
