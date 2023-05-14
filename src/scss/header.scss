@@ -130,20 +130,8 @@
       color: #fff;
       border-radius: 0 0 0 rem(15);
       z-index: 151;
-      &::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: -100%;
-        transition: all 0.3s ease 0s;
-        width: rem(300);
-        height: rem(60);
-        z-index: 2;
-      }
+
       .menu-open & {
-        right: 0;
-      }
-      .menu-open &::before {
         right: 0;
       }
     }

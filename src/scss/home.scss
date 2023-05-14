@@ -928,7 +928,7 @@
     align-self: flex-end;
     svg {
       width: 100% !important;
-      height: 100% !important
+      height: 100% !important;
     }
     @media (max-width: em(580)) {
       width: rem(80);
@@ -1005,8 +1005,6 @@
     background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07), -3px -5px 6px rgba(255, 255, 255, 0.38), inset -3px -3px 6px rgba(255, 255, 255, 0.83),
       inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-
-    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-2px -3px 6px rgba(255, 255, 255, 0.38));
     padding: rem(22);
     border-radius: rem(15);
     position: relative;
