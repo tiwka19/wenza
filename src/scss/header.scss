@@ -1,0 +1,289 @@
+//====================================================================================================
+.header {
+	padding: rem(50) 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: all 0.2s ease 0s;
+	z-index: 150;
+	@media (max-width: $mobile) {
+		padding: rem(25) 0;
+	}
+	&::after {
+		content: '';
+		background-color: rgba(0, 0, 0, 0.3);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: opacity 0.8s ease 0s;
+		pointer-events: none;
+		z-index: 149;
+		.menu-open & {
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: $mobile) {
+		padding: rem(25) 0;
+	}
+	&._header-scroll {
+		background-color: var(--bg-primary);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+		padding: rem(25) 0;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(15);
+	}
+	&__logo {
+		height: rem(22);
+		position: relative;
+		img {
+			max-width: 100%;
+		}
+	}
+	&__menu {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1 1 auto;
+		position: relative;
+	}
+	.callback {
+		display: flex;
+		align-items: center;
+		gap: rem(30);
+		padding-bottom: 0;
+
+		&::after {
+			display: none;
+		}
+
+		@media (max-width: em(1180)) {
+			flex-direction: column;
+			align-items: flex-start;
+			display: none;
+			&--mobile {
+				display: flex;
+			}
+		}
+		@media (max-width: $pc) {
+			gap: rem(15);
+		}
+		&__item-location {
+			@media (min-width: em(1180)) {
+				display: none;
+			}
+		}
+		&--mobile {
+			@media (min-width: em(1180)) {
+				display: none;
+			}
+		}
+		&__item-link {
+			display: flex;
+			align-items: center;
+			gap: rem(5);
+			font-weight: 400;
+		}
+		&__item-icon {
+			font-size: rem(26);
+			@media (max-width: $pc) {
+				font-size: rem(30);
+			}
+		}
+		&__item-value {
+			@media (max-width: $pc) {
+				display: none;
+			}
+			@media (max-width: em(1180)) {
+				display: block;
+				font-size: rem(16);
+			}
+		}
+	}
+}
+.menu {
+	&__body {
+		@media (max-width: em(1180)) {
+			position: fixed;
+			width: rem(300);
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			top: 0;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			right: -100%;
+			transition: all 0.3s ease 0s;
+			overflow: auto;
+			gap: rem(30);
+			padding: rem(70) rem(30) rem(30);
+			background-color: #2e2d2c;
+			color: #fff;
+			border-radius: 0 0 0 rem(15);
+			z-index: 151;
+
+			.menu-open & {
+				right: 0;
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: rem(15) rem(30);
+		position: relative;
+		gap: rem(48);
+		@include adaptiveValue('gap', 48, 30, 3, 1540, 1180);
+		@media (max-width: em(1180)) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	&__item {
+		transition: all 0.3s ease 0s;
+		position: relative;
+		font-weight: 500;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--text-accent);
+			}
+		}
+		&._navigator-active {
+			color: var(--text-accent);
+			@media (min-width: em(1200)) {
+				&::before {
+					width: 100%;
+				}
+				&::after {
+					left: 100%;
+					width: 12px;
+					height: 12px;
+					transform: scale(1);
+				}
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--text-accent);
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					width: 100%;
+				}
+				&::after {
+					left: 100%;
+					width: 12px;
+					height: 12px;
+					transform: scale(1);
+				}
+			}
+		}
+		&::before,
+		&::after {
+			pointer-events: none;
+		}
+		&::before {
+			transition: 0.3s all ease 0s;
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background-color: var(--text-accent);
+		}
+		&::after {
+			content: '';
+			transition: all 0.3s ease 0s;
+			position: absolute;
+			transform: scale(0);
+			left: 0;
+			bottom: -9px;
+			width: 14px;
+			height: 14px;
+			border-radius: 50%;
+			background-color: var(--text-accent);
+		}
+	}
+}
+
+//====================================================================================================6
+//Burger
+
+.icon-menu {
+	display: none;
+	z-index: 152;
+	@media (max-width: em(1180)) {
+		display: block;
+		position: absolute;
+		right: rem(15);
+		height: rem(30);
+	}
+	&__dots {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		.menu-open & {
+			display: none;
+		}
+	}
+	&__dot {
+		width: rem(6);
+		height: rem(6);
+		border-radius: 50%;
+		background-color: #000;
+		position: relative;
+	}
+	&__close {
+		display: none;
+		width: rem(30);
+		height: rem(30);
+		z-index: 10;
+		position: relative;
+		color: #fff;
+		.menu-open & {
+			display: block;
+		}
+	}
+}
+
+.marker {
+	position: absolute;
+	height: rem(3);
+	width: 0;
+	left: 0;
+	background-color: var(--text-accent);
+	bottom: -9px;
+	transition: all 0.3s ease 0s;
+	border-radius: rem(4);
+	&__wrapper {
+		position: relative;
+		&::after {
+			transform: scale(0);
+			content: '';
+			transition: all 0.3s ease 0s;
+			position: absolute;
+			right: 0;
+			bottom: -7px;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background-color: var(--text-accent);
+		}
+		&._active::after {
+			transform: scale(1);
+		}
+	}
+}
