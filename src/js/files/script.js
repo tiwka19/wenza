@@ -3,23 +3,6 @@ import { isMobile } from './functions.js';
 // Підключення списку активних модулів
 import { flsModules } from './modules.js';
 import Toastify from 'toastify-js';
-import AOS from 'aos';
-
-document.addEventListener('DOMContentLoaded', () => {
-  function loadScriptOnlyNonMobileDevices() {
-    let matchMedia = window.matchMedia('(min-width:550px)');
-    if (matchMedia.matches) {
-      AOS.init({
-        startEvent: 'load',
-        mirror: false,
-        once: true,
-        disableMutationObserver: false,
-      });
-    }
-  }
-  loadScriptOnlyNonMobileDevices();
-  window.onresize = loadScriptOnlyNonMobileDevices;
-});
 
 const mapFunc = () => {
   let map = document.querySelector('.map');
