@@ -11,6 +11,15 @@
       top: -50%;
       left: -40%;
       background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -40%;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
       width: 100%;
       height: 100%;
     }
@@ -40,6 +49,9 @@
     @include adaptiveValue('font-size', 80, 26);
     line-height: math.div(99, 80);
     @include adaptiveValue('margin-bottom', 40, 10);
+    @include adaptiveValue("font-size", 80, 26);
+    line-height: math.div(99, 80);
+    @include adaptiveValue("margin-bottom", 40, 10);
     font-family: $fontFamilyHeading;
     @media (max-width: $mobile) {
       text-align: center;
@@ -49,6 +61,9 @@
     @include adaptiveValue('font-size', 38, 20);
     line-height: math.div(46, 38);
     @include adaptiveValue('margin-bottom', 70, 15);
+    @include adaptiveValue("font-size", 38, 20);
+    line-height: math.div(46, 38);
+    @include adaptiveValue("margin-bottom", 70, 15);
     @media (max-width: $mobile) {
       text-align: center;
       margin-bottom: rem(0);
@@ -86,6 +101,7 @@
   position: relative;
   &::after {
     content: '';
+    content: "";
     position: absolute;
     right: -200px;
     top: 500px;
@@ -95,6 +111,13 @@
     background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.61) 0%, rgba(255, 255, 255, 0) 100%);
   }
   @include adaptiveValue('padding-bottom', 120, 60);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 255, 255, 0.61) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  @include adaptiveValue("padding-bottom", 120, 60);
   &__title {
     @media (max-width: $mobile) {
       text-align: center;
@@ -113,6 +136,7 @@
     display: flex;
     flex-direction: column;
     @include adaptiveValue('gap', 64, 30);
+    @include adaptiveValue("gap", 64, 30);
     max-width: rem(1050);
     margin-right: 30%;
     @media (max-width: em(1180)) {
@@ -153,6 +177,13 @@
     background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
     box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83), inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     // filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-3px -5px 6px rgba(255, 255, 255, 0.38));
+    background: linear-gradient(
+      123.09deg,
+      rgba(229, 229, 229, 0.7) -3.86%,
+      rgba(255, 255, 255, 0) 109.9%
+    );
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+      inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     border-radius: 25px;
     @media (max-width: $mobile) {
       display: flex;
@@ -184,6 +215,28 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), -3px -4px 6px rgba(255, 255, 255, 0.38);
     &::before {
       content: '';
+    @include adaptiveValue("font-size", 48, 26);
+    line-height: math.div(60, 48);
+    color: #fff;
+    z-index: 2;
+    @include adaptiveValue("width", 100, 50);
+    @include adaptiveValue("height", 100, 50);
+    display: grid;
+    place-items: center;
+    background: linear-gradient(
+      123.09deg,
+      rgba(229, 229, 229, 0.7) -3.86%,
+      rgba(255, 255, 255, 0) 109.9%
+    );
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+      inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+
+    border-radius: 50%;
+    font-family: $fontFamilyHeading;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15),
+      -3px -4px 6px rgba(255, 255, 255, 0.38);
+    &::before {
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -192,6 +245,14 @@
       // filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.01));
       @include adaptiveValue('width', 130, 60);
       @include adaptiveValue('height', 130, 60);
+      background: linear-gradient(
+        125.98deg,
+        rgba(255, 255, 255, 0.2) 97.01%,
+        rgba(255, 255, 255, 0.2) 97.01%
+      );
+
+      @include adaptiveValue("width", 130, 60);
+      @include adaptiveValue("height", 130, 60);
       border-radius: 50%;
       z-index: -1;
     }
@@ -222,6 +283,7 @@
     right: 0;
     z-index: -1;
     @include adaptiveValue('bottom', -100, -10);
+    @include adaptiveValue("bottom", -100, -10);
     transform: translateX(380px);
 
     @media (max-width: em(1180)) {
@@ -241,6 +303,7 @@
 
 .benefits {
   @include adaptiveValue('padding-bottom', 300, 50);
+  @include adaptiveValue("padding-bottom", 300, 50);
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -259,24 +322,29 @@
     width: rem(530);
     @include adaptiveValue('width', 530, 242, 3, 1180, 320);
     @include adaptiveValue('height', 530, 242, 3, 1180, 320);
+    @include adaptiveValue("width", 530, 242, 3, 1180, 320);
+    @include adaptiveValue("height", 530, 242, 3, 1180, 320);
     height: rem(530);
 
     display: grid;
     place-items: center;
     z-index: 10;
     background: url('@img/benefits-small.svg') 0 0 no-repeat;
+    background: url("@img/benefits-small.svg") 0 0 no-repeat;
     background-size: cover;
     border-radius: 50%;
     backdrop-filter: blur(10px);
 
     &::before {
       content: '';
+      content: "";
       position: absolute;
       right: -390px;
       top: -135px;
       width: 665px;
       height: 800px;
       background-image: url('@img/why-mask.svg');
+      background-image: url("@img/why-mask.svg");
       background-size: cover;
       z-index: -5;
       @media (max-width: em(1500)) {
@@ -294,6 +362,12 @@
       height: rem(573);
       @include adaptiveValue('width', 573, 262, 3, 1180, 320);
       @include adaptiveValue('height', 573, 262, 3, 1180, 320);
+      content: "";
+      position: absolute;
+      width: rem(573);
+      height: rem(573);
+      @include adaptiveValue("width", 573, 262, 3, 1180, 320);
+      @include adaptiveValue("height", 573, 262, 3, 1180, 320);
       background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       z-index: -2;
@@ -317,12 +391,22 @@
   }
   &__data-description {
     @include adaptiveValue('font-size', 28, 18);
+    @include adaptiveValue("font-size", 36, 20);
+    font-size: rem(36);
+
+    line-height: math.div(44, 36);
+    @include adaptiveValue("margin-bottom", 25, 15);
+    font-family: $fontFamilyHeading;
+  }
+  &__data-description {
+    @include adaptiveValue("font-size", 28, 18);
     line-height: math.div(35, 28);
   }
   &__items {
     display: flex;
     flex-direction: column;
     @include adaptiveValue('gap', 60, 25);
+    @include adaptiveValue("gap", 60, 25);
     flex: 1 1 auto;
     position: relative;
   }
@@ -330,12 +414,20 @@
     padding: rem(32);
     background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
     box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83), inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(
+      123.09deg,
+      rgba(229, 229, 229, 0.7) -3.86%,
+      rgba(255, 255, 255, 0) 109.9%
+    );
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+      inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     border-radius: 25px;
     @media (min-width: em(1180)) {
       max-width: rem(688);
       &:nth-child(2),
       &:nth-child(3) {
         @include adaptiveValue('margin-left', 220, 50);
+        @include adaptiveValue("margin-left", 220, 50);
       }
       &:nth-child(1) {
         transform: translateY(-30px);
@@ -347,6 +439,7 @@
   }
   &__item-title {
     @include adaptiveValue('font-size', 24, 20);
+    @include adaptiveValue("font-size", 24, 20);
     line-height: math.div(29, 24);
     margin-bottom: rem(25);
     font-family: $fontFamilyHeading;
@@ -356,6 +449,7 @@
   }
   &__item-descr {
     @include adaptiveValue('font-size', 20, 18);
+    @include adaptiveValue("font-size", 20, 18);
   }
   &__decor {
     position: absolute;
@@ -387,6 +481,7 @@
 
 .produce {
   @include adaptiveValue('padding-bottom', 100, 50);
+  @include adaptiveValue("padding-bottom", 100, 50);
 
   &__item {
     display: flex;
@@ -415,6 +510,15 @@
       top: -100px;
       left: 0;
       background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.3904) 0%, rgba(255, 255, 255, 0) 100%);
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(255, 255, 255, 0.3904) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
       width: rem(600);
       height: rem(600);
       border-radius: 50%;
@@ -429,6 +533,15 @@
       top: 50px;
       left: 0;
       background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
       width: rem(800);
       height: rem(800);
       border-radius: 50%;
@@ -444,6 +557,13 @@
   }
   &__item-descr {
     @include adaptiveValue('font-size', 28, 16);
+    @include adaptiveValue("font-size", 36, 18);
+    line-height: math.div(44, 36);
+    font-family: $fontFamilyHeading;
+    @include adaptiveValue("margin-bottom", 30, 10);
+  }
+  &__item-descr {
+    @include adaptiveValue("font-size", 28, 16);
     line-height: math.div(35, 28);
     &:not(:last-child) {
       margin-bottom: rem(15);
@@ -480,6 +600,7 @@
   position: relative;
   &::after {
     content: '';
+    content: "";
     position: absolute;
     top: -50%;
     pointer-events: none;
@@ -488,6 +609,11 @@
     width: rem(758);
     height: rem(748);
     background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
     @media (max-width: $mobile) {
       display: none;
     }
@@ -501,6 +627,20 @@
     background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
     box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83), inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     // filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-3px -5px 6px rgba(255, 255, 255, 0.38));
+  @include adaptiveValue("padding-bottom", 100, 50);
+  &__wrapper {
+    @include adaptiveValue("padding-top", 80, 30);
+    @include adaptiveValue("padding-bottom", 80, 30);
+    padding-left: rem(30);
+    padding-right: rem(30);
+    background: linear-gradient(
+      123.09deg,
+      rgba(229, 229, 229, 0.7) -3.86%,
+      rgba(255, 255, 255, 0) 109.9%
+    );
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+      inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+
     border-radius: 25px;
   }
   &__inner {
@@ -510,6 +650,7 @@
   }
   &__title {
     @include adaptiveValue('font-size', 48, 24);
+    @include adaptiveValue("font-size", 48, 24);
     line-height: math.div(59, 48);
     margin-bottom: rem(40);
     text-align: center;
@@ -518,6 +659,8 @@
   &__descr {
     @include adaptiveValue('font-size', 28, 20);
     @include adaptiveValue('margin-bottom', 65, 5);
+    @include adaptiveValue("font-size", 28, 20);
+    @include adaptiveValue("margin-bottom", 65, 5);
   }
   &__inputs {
     display: flex;
@@ -526,6 +669,7 @@
     gap: rem(40);
 
     @include adaptiveValue('margin-bottom', 65, 25);
+    @include adaptiveValue("margin-bottom", 65, 25);
     label:focus-within > span,
     input:not(:placeholder-shown) + span {
       transform: translateY(0px);
@@ -589,6 +733,7 @@
 
     &::after {
       content: '';
+      content: "";
       position: absolute;
       bottom: -3px;
       right: 0;
@@ -613,11 +758,13 @@
 
 .portfolio {
   @include adaptiveValue('padding-bottom', 100, 50);
+  @include adaptiveValue("padding-bottom", 100, 50);
   &__items {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: rem(40);
     @include adaptiveValue('gap', 40, 15, 3, 1540, 992);
+    @include adaptiveValue("gap", 40, 15, 3, 1540, 992);
 
     @media (max-width: $tablet) {
       grid-template-columns: repeat(3, 1fr);
@@ -629,11 +776,15 @@
   &__item {
     background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07), -3px -5px 6px rgba(255, 255, 255, 0.38), inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07),
+      -3px -5px 6px rgba(255, 255, 255, 0.38),
+      inset -3px -3px 6px rgba(255, 255, 255, 0.83),
       inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(8.5px);
     border-radius: 25px;
     transition: color 0.2s ease 0s;
     @include adaptiveValue('padding', 32, 15);
+    @include adaptiveValue("padding", 32, 15);
     @media (max-width: $mobile) {
       display: flex;
       align-items: center;
@@ -655,6 +806,7 @@
   }
   &__item-title {
     @include adaptiveValue('font-size', 24, 18);
+    @include adaptiveValue("font-size", 24, 18);
     line-height: math.div(29, 24);
     font-family: $fontFamilyHeading;
     @media (min-width: $mobile) {
@@ -666,6 +818,8 @@
     @media (max-width: $mobile) {
       @include adaptiveValue('max-width', 300, 65);
       @include adaptiveValue('height', 300, 50);
+      @include adaptiveValue("max-width", 300, 65);
+      @include adaptiveValue("height", 300, 50);
     }
   }
   &__item-img svg {
@@ -676,6 +830,7 @@
 
 .work {
   @include adaptiveValue('padding-bottom', 100, 50);
+  @include adaptiveValue("padding-bottom", 100, 50);
   &__wrapper {
     display: flex;
     align-items: center;
@@ -699,6 +854,18 @@
       top: 0;
       left: -30%;
       background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 100%);
+    @include adaptiveValue("gap", 64, 30);
+    width: 100%;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -30%;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(255, 255, 255, 0.45) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
       width: 100%;
       height: 100%;
       z-index: -1;
@@ -712,11 +879,13 @@
       &:last-child {
         margin-left: rem(500);
         @include adaptiveValue('margin-left', 500, 200, 3, 1540, 1180);
+        @include adaptiveValue("margin-left", 500, 200, 3, 1540, 1180);
       }
       &:nth-child(2),
       &:nth-child(5) {
         margin-left: rem(230);
         @include adaptiveValue('margin-left', 230, 50, 3, 1540, 1180);
+        @include adaptiveValue("margin-left", 230, 50, 3, 1540, 1180);
       }
     }
     @media (max-width: em(1180)) {
@@ -749,6 +918,14 @@
     background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
     box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83), inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     // filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-3px -5px 6px rgba(255, 255, 255, 0.38));
+    background: linear-gradient(
+      123.09deg,
+      rgba(229, 229, 229, 0.7) -3.86%,
+      rgba(255, 255, 255, 0) 109.9%
+    );
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+      inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+
     border-radius: 25px;
     width: rem(550);
     @media (max-width: em(1180)) {
@@ -759,6 +936,7 @@
   &__step-title {
     font-family: $fontFamilyHeading;
     @include adaptiveValue('font-size', 24, 16);
+    @include adaptiveValue("font-size", 24, 16);
     line-height: math.div(29, 20);
     margin-bottom: rem(15);
     @media (max-width: $mobile) {
@@ -769,6 +947,7 @@
   }
   &__step-descr {
     @include adaptiveValue('font-size', 20, 18);
+    @include adaptiveValue("font-size", 20, 18);
     line-height: math.div(26, 20);
     @media (max-width: $mobile) {
       display: none;
@@ -778,6 +957,7 @@
     position: relative;
     font-size: rem(48);
     @include adaptiveValue('font-size', 48, 24, 3, 1540, 768);
+    @include adaptiveValue("font-size", 48, 24, 3, 1540, 768);
     line-height: math.div(60, 48);
     color: #fff;
     z-index: 2;
@@ -794,6 +974,24 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), -3px -4px 6px rgba(255, 255, 255, 0.38);
     &::before {
       content: '';
+    @include adaptiveValue("width", 100, 50);
+    @include adaptiveValue("height", 100, 50);
+    display: grid;
+    place-items: center;
+    background: linear-gradient(
+      123.09deg,
+      rgba(229, 229, 229, 0.7) -3.86%,
+      rgba(255, 255, 255, 0) 109.9%
+    );
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+      inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+
+    border-radius: 50%;
+    font-family: $fontFamilyHeading;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15),
+      -3px -4px 6px rgba(255, 255, 255, 0.38);
+    &::before {
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -801,6 +999,13 @@
       background: linear-gradient(125.98deg, rgba(255, 255, 255, 0.2) 97.01%, rgba(255, 255, 255, 0.2) 97.01%);
       @include adaptiveValue('width', 130, 60);
       @include adaptiveValue('height', 130, 60);
+      background: linear-gradient(
+        125.98deg,
+        rgba(255, 255, 255, 0.2) 97.01%,
+        rgba(255, 255, 255, 0.2) 97.01%
+      );
+      @include adaptiveValue("width", 130, 60);
+      @include adaptiveValue("height", 130, 60);
       border-radius: 50%;
       z-index: -1;
     }
@@ -834,6 +1039,11 @@
       left: -500px;
       top: 200px;
       background: url('@img/hero-mask.svg') 0 0 no-repeat;
+      content: "";
+      position: absolute;
+      left: -500px;
+      top: 200px;
+      background: url("@img/hero-mask.svg") 0 0 no-repeat;
       width: 100%;
       height: 100%;
       z-index: -5;
@@ -858,17 +1068,21 @@
 
 .advantages {
   @include adaptiveValue('padding-bottom', 100, 50);
+  @include adaptiveValue("padding-bottom", 100, 50);
   &__title {
     margin-bottom: rem(20) !important;
   }
   &__subtitle {
     @include adaptiveValue('margin-bottom', 80, 25);
     @include adaptiveValue('font-size', 28, 16);
+    @include adaptiveValue("margin-bottom", 80, 25);
+    @include adaptiveValue("font-size", 28, 16);
   }
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     @include adaptiveValue('gap', 40, 20);
+    @include adaptiveValue("gap", 40, 20);
     @media (max-width: em(1180)) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -883,6 +1097,11 @@
     @include adaptiveValue('padding', 30, 15);
     background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07), -3px -5px 6px rgba(255, 255, 255, 0.38), inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+    @include adaptiveValue("padding", 30, 15);
+    background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07),
+      -3px -5px 6px rgba(255, 255, 255, 0.38),
+      inset -3px -3px 6px rgba(255, 255, 255, 0.83),
       inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(8.5px);
     border-radius: 25px;
@@ -922,6 +1141,7 @@
   &__item-title {
     font-family: $fontFamilyHeading;
     @include adaptiveValue('font-size', 24, 16);
+    @include adaptiveValue("font-size", 24, 16);
     line-height: math.div(29, 24);
   }
   &__item-img {
@@ -939,6 +1159,7 @@
 
 .team {
   @include adaptiveValue('padding-bottom', 100, 50);
+  @include adaptiveValue("padding-bottom", 100, 50);
   &__title {
     margin-bottom: rem(25) !important;
   }
@@ -946,12 +1167,16 @@
     @include adaptiveValue('font-size', 28, 16);
     line-height: math.div(35, 28);
     @include adaptiveValue('margin-bottom', 80, 25);
+    @include adaptiveValue("font-size", 28, 16);
+    line-height: math.div(35, 28);
+    @include adaptiveValue("margin-bottom", 80, 25);
   }
   &__list {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(4, 1fr);
     @include adaptiveValue('gap', 80, 15);
+    @include adaptiveValue("gap", 80, 15);
     @media (max-width: $tablet) {
       grid-template-columns: 1fr 1fr;
     }
@@ -964,6 +1189,11 @@
   }
   &__item-post {
     @include adaptiveValue('font-size', 28, 16);
+    @include adaptiveValue("font-size", 24, 16);
+    line-height: math.div(29, 24);
+  }
+  &__item-post {
+    @include adaptiveValue("font-size", 28, 16);
     line-height: math.div(35, 28);
     color: #4d64aa;
   }
@@ -1004,6 +1234,9 @@
   &__place {
     background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07), -3px -5px 6px rgba(255, 255, 255, 0.38), inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07),
+      -3px -5px 6px rgba(255, 255, 255, 0.38),
+      inset -3px -3px 6px rgba(255, 255, 255, 0.83),
       inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     padding: rem(22);
     border-radius: rem(15);
@@ -1011,6 +1244,7 @@
     z-index: 2;
     transition: color 0.3s ease 0s;
     @include adaptiveValue('margin-bottom', 30, 20);
+    @include adaptiveValue("margin-bottom", 30, 20);
     @media (min-width: em(1300)) {
       width: rem(270);
     }
@@ -1098,6 +1332,7 @@
     font-family: $fontFamilyHeading;
     margin-bottom: rem(15);
     pointer-events: none;
+
     @media (max-width: $mobile) {
       margin-bottom: rem(10);
       font-size: rem(16);
@@ -1106,6 +1341,7 @@
   &__place-phone,
   &__place-email {
     pointer-events: none;
+    z-index: 10;
     font-size: rem(16);
   }
 
@@ -1127,6 +1363,8 @@
       @media (max-width: em(1300)) {
         @include adaptiveValue('width', 1400, 650);
         @include adaptiveValue('height', 1033, 349);
+        @include adaptiveValue("width", 1400, 650);
+        @include adaptiveValue("height", 1033, 349);
       }
     }
     svg path {
@@ -1134,6 +1372,7 @@
       position: relative;
       &::after {
         content: '';
+        content: "";
         background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8965 20.6377C14.4188 19.8508 19.7904 16.7027 19.7904 11.4582C19.7904 7.43109 16.5258 4.1665 12.4987 4.1665C8.47162 4.1665 5.20703 7.43109 5.20703 11.4582C5.20703 16.7027 10.5785 19.8508 12.1009 20.6377C12.354 20.7685 12.6434 20.7685 12.8965 20.6377ZM12.4987 14.5832C14.2246 14.5832 15.6237 13.1841 15.6237 11.4582C15.6237 9.73228 14.2246 8.33317 12.4987 8.33317C10.7728 8.33317 9.3737 9.73228 9.3737 11.4582C9.3737 13.1841 10.7728 14.5832 12.4987 14.5832Z' fill='%23333333'/%3E%3Cpath d='M12.8965 20.6377L13.172 21.1707H13.172L12.8965 20.6377ZM12.1009 20.6377L11.8254 21.1707H11.8254L12.1009 20.6377ZM19.1904 11.4582C19.1904 13.8622 17.9609 15.817 16.489 17.2963C15.0177 18.775 13.3553 19.7251 12.621 20.1047L13.172 21.1707C13.96 20.7634 15.7445 19.7459 17.3396 18.1427C18.9341 16.5402 20.3904 14.2987 20.3904 11.4582H19.1904ZM12.4987 4.7665C16.1944 4.7665 19.1904 7.76247 19.1904 11.4582H20.3904C20.3904 7.09972 16.8571 3.5665 12.4987 3.5665V4.7665ZM5.80703 11.4582C5.80703 7.76247 8.80299 4.7665 12.4987 4.7665V3.5665C8.14025 3.5665 4.60703 7.09972 4.60703 11.4582H5.80703ZM12.3764 20.1047C11.6421 19.7251 9.97965 18.775 8.50842 17.2963C7.03653 15.817 5.80703 13.8622 5.80703 11.4582H4.60703C4.60703 14.2987 6.06329 16.5402 7.65775 18.1427C9.25287 19.7459 11.0374 20.7634 11.8254 21.1707L12.3764 20.1047ZM12.621 20.1047C12.5407 20.1462 12.4567 20.1462 12.3764 20.1047L11.8254 21.1707C12.2513 21.3908 12.7461 21.3908 13.172 21.1707L12.621 20.1047ZM15.0237 11.4582C15.0237 12.8527 13.8932 13.9832 12.4987 13.9832V15.1832C14.556 15.1832 16.2237 13.5154 16.2237 11.4582H15.0237ZM12.4987 8.93317C13.8932 8.93317 15.0237 10.0637 15.0237 11.4582H16.2237C16.2237 9.40091 14.556 7.73317 12.4987 7.73317V8.93317ZM9.9737 11.4582C9.9737 10.0637 11.1042 8.93317 12.4987 8.93317V7.73317C10.4414 7.73317 8.7737 9.40091 8.7737 11.4582H9.9737ZM12.4987 13.9832C11.1042 13.9832 9.9737 12.8527 9.9737 11.4582H8.7737C8.7737 13.5154 10.4414 15.1832 12.4987 15.1832V13.9832Z' fill='%23333333'/%3E%3C/svg%3E%0A");
         width: rem(25);
         height: rem(25);

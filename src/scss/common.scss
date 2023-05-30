@@ -104,4 +104,58 @@
       display: block;
     }
   }
+	@include adaptiveValue('font-size', 64, 20);
+	line-height: math.div(79, 64);
+	@include adaptiveValue('margin-bottom', 60, 30);
+	font-family: $fontFamilyHeading;
+	@media (max-width: $mobile) {
+		text-align: center;
+	}
+}
+
+.menu-item-28 {
+	@media (min-width: $tablet) {
+		margin-left: auto;
+	}
+}
+
+.menu-item {
+	transition: color 0.2s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--text-accent);
+		}
+	}
+}
+
+.wpcf7-response-output {
+	display: none;
+}
+
+.wpcf7-spinner {
+	display: none;
+}
+
+.form__error {
+	position: absolute;
+	bottom: -30px;
+	color: #dc4133;
+}
+
+.why-mask-mobile {
+	display: none;
+	@media (max-width: $mobileSmall) {
+		display: block;
+		position: absolute;
+		bottom: -180px;
+		width: 100%;
+		height: 241px;
+		@media (max-width: $mobileSmall) {
+			height: 80%;
+		}
+	}
+}
+
+.page-content article {
+	margin-bottom: rem(50);
 }

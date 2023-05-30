@@ -27,4 +27,30 @@
   svg {
     transform: rotate(180deg);
   }
+	display: block;
+}
+[data-showmore-button] {
+	padding-top: rem(15);
+	z-index: 10;
+	position: relative;
+	span {
+		&:nth-child(2) {
+			display: none;
+		}
+		._showmore-active & {
+			display: none;
+			&:nth-child(2) {
+				display: block;
+			}
+		}
+	}
+	svg {
+		transition: transform 0.3s ease 0s;
+	}
+}
+
+._showmore-active {
+	svg {
+		transform: rotate(180deg);
+	}
 }

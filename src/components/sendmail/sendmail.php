@@ -8,7 +8,11 @@
 
 	$mail = new PHPMailer(true);
 	$mail->CharSet = 'UTF-8';
+<<<<<<< HEAD
 	$mail->setLanguage('en', 'phpmailer/language/');
+=======
+	$mail->setLanguage('ru', 'phpmailer/language/');
+>>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
 	$mail->IsHTML(true);
 
 	/*

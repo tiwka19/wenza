@@ -1,4 +1,5 @@
 %ic {
+<<<<<<< HEAD
   font-family: 'icons';
   font-style: normal;
   font-weight: normal;
@@ -13,6 +14,22 @@
     @extend %ic;
     display: block;
   }
+=======
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+>>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
 }
 
 ._icon-arrow-up:before {

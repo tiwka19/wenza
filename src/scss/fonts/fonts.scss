@@ -9,7 +9,11 @@
 	font-family: FuturaPT;
 	font-display: swap;
 	src: url("../fonts/FuturaPT-Heavy.woff2") format("woff2"), url("../fonts/FuturaPT-Heavy.woff") format("woff");
+<<<<<<< HEAD
 	font-weight: 800;
+=======
+	font-weight: 900;
+>>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
 	font-style: normal;
 }
 @font-face {
@@ -22,6 +26,7 @@
 @font-face {
 	font-family: Halvar Breitschrift;
 	font-display: swap;
+<<<<<<< HEAD
 	src: url("../fonts/Halvar Breitschrift-Bold-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Bold-Web.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
@@ -29,6 +34,8 @@
 @font-face {
 	font-family: Halvar Breitschrift;
 	font-display: swap;
+=======
+>>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
 	src: url("../fonts/Halvar Breitschrift-Medium-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Medium-Web.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
@@ -36,8 +43,13 @@
 @font-face {
 	font-family: Halvar Breitschrift;
 	font-display: swap;
+<<<<<<< HEAD
 	src: url("../fonts/Halvar Breitschrift-Regular-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Regular-Web.woff") format("woff");
 	font-weight: 400;
+=======
+	src: url("../fonts/Halvar Breitschrift-Bold-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Bold-Web.woff") format("woff");
+	font-weight: 700;
+>>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
 	font-style: normal;
 }
 @font-face {
@@ -47,3 +59,13 @@
 	font-weight: 400;
 	font-style: normal;
 }
+<<<<<<< HEAD
+=======
+@font-face {
+	font-family: Halvar Breitschrift;
+	font-display: swap;
+	src: url("../fonts/Halvar Breitschrift-Regular-Web.woff2") format("woff2"), url("../fonts/Halvar Breitschrift-Regular-Web.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+>>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
