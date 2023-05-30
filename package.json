@@ -74,6 +74,8 @@
 	"dependencies": {
 		"gulp-cheerio": "^1.0.0",
 		"isotope-layout": "^3.0.6",
-		"simplebar": "latest"
+		"scrollreveal": "^4.0.9",
+		"simplebar": "latest",
+		"toastify-js": "^1.12.0"
 	}
 }
