@@ -1,0 +1,124 @@
+.request {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(60);
+    margin-bottom: rem(30);
+  }
+  &__data {
+    flex: 0 1 rem(1100);
+  }
+  &__description {
+    margin-bottom: rem(30);
+    @include adaptiveValue('font-size', 36, 20);
+    line-height: math.div(46, 36);
+  }
+  &__image img {
+    max-width: 100%;
+  }
+
+  &__input {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #ffffff;
+    border-radius: 5px !important;
+    width: 100%;
+    height: 40px;
+    padding: rem(10) rem(15);
+  }
+
+  .form {
+    background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83), inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-3px -5px 6px rgba(255, 255, 255, 0.38));
+    backdrop-filter: blur(8.5px);
+    border-radius: 25px;
+    padding: rem(60) rem(50);
+    &__row {
+      padding-bottom: rem(50);
+      margin-bottom: rem(50);
+      border-bottom: 1px solid #ffffff;
+    }
+    &__row-choices {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: rem(40);
+    }
+    &__row-title,
+    &__choice-title {
+      margin-bottom: rem(30);
+      font-size: rem(24);
+      line-height: math.div(29, 24);
+      font-family: $fontFamilyHeading;
+      span {
+        font-size: rem(16);
+        line-height: math.div(24, 16);
+      }
+    }
+    &__choice-checkboxes {
+      display: flex;
+      align-items: center;
+      gap: rem(50);
+    }
+    &__row-inputs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: rem(40);
+    }
+    &__row-inputs._end {
+      align-items: flex-end;
+    }
+    &__row-inputs._grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .row-input {
+      width: 100%;
+      border-radius: 5px;
+      &__label {
+        font-size: rem(20);
+        line-height: math.div(25, 20);
+        margin-bottom: rem(10);
+        display: block;
+      }
+    }
+    &__upload-button {
+      background-color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: rem(5);
+      border-radius: 50px;
+      padding: rem(5) rem(25);
+      width: rem(230);
+      text-align: center;
+      justify-content: center;
+      flex: 0 0 rem(230);
+      cursor: pointer;
+      white-space: nowrap;
+      &._active {
+        background-color: var(--text-accent);
+        color: #fff;
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+    &__send {
+      text-align: center;
+      &-button {
+        margin-bottom: rem(15);
+      }
+      &-text a {
+        color: #000;
+        font-weight: 500;
+        @media (any-hover: hover) {
+          &:hover {
+            color: var(--text-accent);
+          }
+        }
+      }
+    }
+  }
+}

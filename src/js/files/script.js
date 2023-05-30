@@ -158,3 +158,10 @@ formSubmitting();
 //     sr.reveal('.benefits__decor', { origin: 'left', delay: 800 });
 //   }
 // });
+
+let fileInput = document.getElementById('upload');
+if (fileInput) {
+  fileInput.addEventListener('change', () => {
+    fileInput.files.length > 0 ? fileInput.nextElementSibling.classList.add('_active') : fileInput.nextElementSibling.classList.remove('_active');
+  });
+}

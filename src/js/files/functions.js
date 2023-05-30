@@ -304,7 +304,6 @@ export function spollers() {
 export function tabs() {
   const tabs = document.querySelectorAll('[data-tabs]');
   let tabsActiveHash = [];
-
   if (tabs.length > 0) {
     const hash = getHash();
     if (hash && hash.startsWith('tab-')) {
@@ -316,42 +315,9 @@ export function tabs() {
       tabsBlock.addEventListener('click', setTabsAction);
       initTabs(tabsBlock);
     });
-
-    // Отримання слойлерів з медіа-запитами
-    let mdQueriesArray = dataMediaQueries(tabs, 'tabs');
-    if (mdQueriesArray && mdQueriesArray.length) {
-      mdQueriesArray.forEach((mdQueriesItem) => {
-        // Подія
-        mdQueriesItem.matchMedia.addEventListener('change', function () {
-          setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-        });
-        setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-      });
-    }
   }
-  // Встановлення позицій заголовків
-  function setTitlePosition(tabsMediaArray, matchMedia) {
-    tabsMediaArray.forEach((tabsMediaItem) => {
-      tabsMediaItem = tabsMediaItem.item;
-      let tabsTitles = tabsMediaItem.querySelector('[data-tabs-titles]');
-      let tabsTitleItems = tabsMediaItem.querySelectorAll('[data-tabs-title]');
-      let tabsContent = tabsMediaItem.querySelector('[data-tabs-body]');
-      let tabsContentItems = tabsMediaItem.querySelectorAll('[data-tabs-item]');
-      tabsTitleItems = Array.from(tabsTitleItems).filter((item) => item.closest('[data-tabs]') === tabsMediaItem);
-      tabsContentItems = Array.from(tabsContentItems).filter((item) => item.closest('[data-tabs]') === tabsMediaItem);
-      tabsContentItems.forEach((tabsContentItem, index) => {
-        if (matchMedia.matches) {
-          tabsContent.append(tabsTitleItems[index]);
-          tabsContent.append(tabsContentItem);
-          tabsMediaItem.classList.add('_tab-spoller');
-        } else {
-          tabsTitles.append(tabsTitleItems[index]);
-          tabsMediaItem.classList.remove('_tab-spoller');
-        }
-      });
-    });
-  }
-  // Робота з контентом
+ 
+  // Работа с контентом
   function initTabs(tabsBlock) {
     let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles]>*');
     let tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
@@ -380,12 +346,12 @@ export function tabs() {
     let tabsTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
     let tabsContent = tabsBlock.querySelectorAll('[data-tabs-item]');
     const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
-    function isTabsAnamate(tabsBlock) {
+    function isTabsAnimate(tabsBlock) {
       if (tabsBlock.hasAttribute('data-tabs-animate')) {
         return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
       }
     }
-    const tabsBlockAnimate = isTabsAnamate(tabsBlock);
+    const tabsBlockAnimate = isTabsAnimate(tabsBlock);
     if (tabsContent.length > 0) {
       const isHash = tabsBlock.hasAttribute('data-tabs-hash');
       tabsContent = Array.from(tabsContent).filter((item) => item.closest('[data-tabs]') === tabsBlock);

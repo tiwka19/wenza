@@ -1,6 +1,6 @@
 // Заголовки, загальні БЕМ блоки та інше...
 ._section-title {
-  @include adaptiveValue('font-size', 64, 20);
+  @include adaptiveValue('font-size', 64, 22);
   line-height: math.div(79, 64);
   @include adaptiveValue('margin-bottom', 60, 30);
   font-family: $fontFamilyHeading;
@@ -54,4 +54,54 @@
 
 .page-content article {
   margin-bottom: rem(50);
+}
+
+.notfound {
+  &__container {
+    @include adaptiveValue('padding-top', 100, 60);
+    @include adaptiveValue('padding-bottom', 100, 60);
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('gap', 160, 30);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+  &__title {
+    margin-bottom: rem(40) !important;
+    @media (max-width: $mobileSmall) {
+      margin-bottom: rem(15) !important;
+    }
+  }
+  &__data {
+    flex: 0 1 rem(750);
+    @media (max-width: $tablet) {
+      flex: auto;
+      text-align: center;
+    }
+  }
+  &__descr {
+    @include adaptiveValue('font-size', 36, 20);
+    line-height: math.div(46, 36);
+    @include adaptiveValue('margin-bottom', 65, 15);
+  }
+  &__image img {
+    max-width: 100%;
+  }
+  &__image {
+    @media (max-width: $tablet) {
+      margin-bottom: rem(15);
+    }
+  }
+  &__button {
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &__button--mobile {
+    display: none;
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
 }

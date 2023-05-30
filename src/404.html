@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"HomePage" })
+
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page notfound">
+        <div class="notfound__container">
+          <div class="notfound__data">
+            <h1 class="notfound__title _section-title">Page Not Found</h1>
+            <p class="notfound__descr">We’re sorry, the page you requested could not be found Please go back to the homepage</p>
+            <a href="/" class="notfound__button button">Go home</a>
+          </div>
+          <div class="notfound__image">
+            <img src="@img/404.png"  alt="404 image" />
+          </div>
+					<a href="/" class="notfound__button notfound__button--mobile button">Go home</a>
+        </div>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>
