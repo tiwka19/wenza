@@ -5,14 +5,26 @@
     align-items: center;
     gap: rem(60);
     margin-bottom: rem(30);
+    padding-top: rem(50);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
   }
   &__data {
-    flex: 0 1 rem(1100);
+    @media (min-width: $mobile) {
+      flex: 0 1 rem(1100);
+    }
+    @media (max-width: $mobile) {
+      text-align: center;
+    }
   }
   &__description {
     margin-bottom: rem(30);
     @include adaptiveValue('font-size', 36, 20);
     line-height: math.div(46, 36);
+    @media (max-width: $mobile) {
+      margin-bottom: rem(0);
+    }
   }
   &__image img {
     max-width: 100%;
@@ -34,16 +46,29 @@
     backdrop-filter: blur(8.5px);
     border-radius: 25px;
     padding: rem(60) rem(50);
+    @media (max-width: $mobile) {
+      padding: rem(30);
+    }
     &__row {
       padding-bottom: rem(50);
       margin-bottom: rem(50);
       border-bottom: 1px solid #ffffff;
+      @media (max-width: $mobile) {
+        padding-bottom: rem(30);
+        margin-bottom: rem(30);
+      }
     }
     &__row-choices {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: rem(40);
+      flex-wrap: wrap;
+      @media (max-width: $mobileSmall) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(30);
+      }
     }
     &__row-title,
     &__choice-title {
@@ -51,28 +76,48 @@
       font-size: rem(24);
       line-height: math.div(29, 24);
       font-family: $fontFamilyHeading;
+      @media (max-width: $mobileSmall) {
+        font-size: rem(22);
+      }
       span {
         font-size: rem(16);
         line-height: math.div(24, 16);
       }
     }
-    &__choice-checkboxes {
+    &__choice-checkboxes .wpcf7-radio {
       display: flex;
       align-items: center;
       gap: rem(50);
+      flex-wrap: wrap;
+      @media (max-width: $mobileSmall) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(30);
+      }
     }
     &__row-inputs {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: rem(40);
+      @media (max-width: $tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(25);
+      }
     }
     &__row-inputs._end {
       align-items: flex-end;
+      @media (max-width: $mobile) {
+        align-items: flex-start;
+      }
     }
     &__row-inputs._grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+      }
     }
     .row-input {
       width: 100%;
@@ -86,29 +131,52 @@
     }
     &__upload-button {
       background-color: #fff;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: rem(5);
       border-radius: 50px;
       padding: rem(5) rem(25);
-      width: rem(230);
       text-align: center;
       justify-content: center;
-      flex: 0 0 rem(230);
       cursor: pointer;
       white-space: nowrap;
+      .upload-button-icon {
+        width: rem(30);
+        height: rem(30);
+      }
+      svg {
+        width: rem(30);
+        height: rem(30);
+      }
+
       &._active {
         background-color: var(--text-accent);
         color: #fff;
         svg {
           fill: #fff;
         }
+        .upload-button-icon {
+          display: none;
+        }
+        .remove-button {
+          display: block;
+        }
       }
+    }
+    .remove-button {
+      display: none;
+      width: rem(30);
+      height: rem(30);
     }
     &__send {
       text-align: center;
       &-button {
         margin-bottom: rem(15);
+        cursor: pointer;
+        @media (max-width: $mobileSmall) {
+          width: 100%;
+          justify-content: center;
+        }
       }
       &-text a {
         color: #000;

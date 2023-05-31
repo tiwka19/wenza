@@ -24,18 +24,37 @@
   }
 }
 
-.wpcf7-response-output {
-  display: none;
-}
-
-.wpcf7-spinner {
-  display: none;
+.wpcf7 form.sent .wpcf7-response-output {
+  border: none !important;
+  margin: rem(15) 0 0 0 !important;
+  animation: hideresp 5s forwards;
+  animation-iteration-count: 1;
+  position: fixed;
+  bottom: rem(15);
+  left: 50%;
+  transform: translate(-50%);
+  padding: rem(15);
+  background-color: var(--text-accent);
+  color: #fff;
+  border-radius: rem(12);
+  @keyframes hideresp {
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }
 
 .form__error {
   position: absolute;
   bottom: -30px;
   color: #dc4133;
+}
+
+.wpcf7-file {
+  display: none;
 }
 
 .why-mask-mobile {
@@ -83,6 +102,7 @@
   &__descr {
     @include adaptiveValue('font-size', 36, 20);
     line-height: math.div(46, 36);
+    font-family: $fontFamily;
     @include adaptiveValue('margin-bottom', 65, 15);
   }
   &__image img {
@@ -104,58 +124,11 @@
       display: block;
     }
   }
-	@include adaptiveValue('font-size', 64, 20);
-	line-height: math.div(79, 64);
-	@include adaptiveValue('margin-bottom', 60, 30);
-	font-family: $fontFamilyHeading;
-	@media (max-width: $mobile) {
-		text-align: center;
-	}
-}
-
-.menu-item-28 {
-	@media (min-width: $tablet) {
-		margin-left: auto;
-	}
-}
-
-.menu-item {
-	transition: color 0.2s ease 0s;
-	@media (any-hover: hover) {
-		&:hover {
-			color: var(--text-accent);
-		}
-	}
-}
-
-.wpcf7-response-output {
-	display: none;
-}
-
-.wpcf7-spinner {
-	display: none;
-}
-
-.form__error {
-	position: absolute;
-	bottom: -30px;
-	color: #dc4133;
-}
-
-.why-mask-mobile {
-	display: none;
-	@media (max-width: $mobileSmall) {
-		display: block;
-		position: absolute;
-		bottom: -180px;
-		width: 100%;
-		height: 241px;
-		@media (max-width: $mobileSmall) {
-			height: 80%;
-		}
-	}
-}
-
-.page-content article {
-	margin-bottom: rem(50);
+  @include adaptiveValue('font-size', 64, 20);
+  line-height: math.div(79, 64);
+  @include adaptiveValue('margin-bottom', 60, 30);
+  font-family: $fontFamilyHeading;
+  @media (max-width: $mobile) {
+    text-align: center;
+  }
 }

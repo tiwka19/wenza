@@ -84,25 +84,32 @@
 
                 <input type="file" id="upload" hidden />
                 <label for="upload" class="form__upload-button">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
-                      fill="currentColor" />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
-                      fill="currentColor" />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
-                      fill="currentColor" />
-                  </svg>
-                  upload a photo</label
-                >
+                  <div class="upload-button-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
+                        fill="currentColor" />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
+                        fill="currentColor" />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
+                        fill="currentColor" />
+                    </svg>
+                  </div>
+                  <button type="button" class="remove-button">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M24 8L8 24M8 8L24 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <span> upload a photo</span>
+                </label>
               </div>
             </div>
             <div class="form__row">
@@ -143,27 +150,34 @@
                   <label for="otherParameters" class="row-input__label">Other Parameters</label>
                   <input autocomplete="off" type="text" id="otherParameters" class="input request__input" />
                 </div>
-                <input type="file" id="upload" hidden />
-                <label for="upload" class="form__upload-button">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
-                      fill="currentColor" />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
-                      fill="currentColor" />
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
-                      fill="currentColor" />
-                  </svg>
-                  upload a photo</label
-                >
+                <input type="file" id="upload1" hidden />
+                <label for="upload1" class="form__upload-button">
+                  <div class="upload-button-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
+                        fill="currentColor" />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
+                        fill="currentColor" />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
+                        fill="currentColor" />
+                    </svg>
+                  </div>
+                  <button type="button" class="remove-button">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M24 8L8 24M8 8L24 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <span> upload a photo </span>
+                </label>
               </div>
             </div>
             <div class="form__row">

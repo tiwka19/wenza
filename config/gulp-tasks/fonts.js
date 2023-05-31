@@ -56,10 +56,7 @@ export const fonstStyle = () => {
 				// Якщо файлу немає, створюємо його
 				fs.writeFile(fontsFile, '', cb);
 				let newFileOnly;
-<<<<<<< HEAD
-=======
 				/*
->>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
 				for (var i = 0; i < fontsFiles.length; i++) {
 					// Записуємо підключення шрифтів до файлу стилів
 					let fontFileName = fontsFiles[i].split('.')[0];
@@ -89,12 +86,6 @@ export const fonstStyle = () => {
 						newFileOnly = fontFileName;
 					}
 				}
-<<<<<<< HEAD
-			} else {
-				// Якщо файл є, виводимо повідомлення
-				console.log("Файл scss/fonts/fonts.scss вже існує. Для оновлення файлу потрібно видалити його!");
-
-=======
 				*/
 				for (var i = 0; i < fontsFiles.length; i++) {
 					let fontFileName = fontsFiles[i].split(".")[0];
@@ -158,7 +149,6 @@ export const fonstStyle = () => {
 			} else {
 				// Якщо файл є, виводимо повідомлення
 				console.log("Файл scss/fonts/fonts.scss вже існує. Для оновлення файлу потрібно видалити його!");
->>>>>>> ff8ef1c7f1cf21e760087811fa577bee97e09c11
 			}
 		} else {
 			// Якщо шрифтів немає
