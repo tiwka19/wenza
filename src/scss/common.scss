@@ -24,7 +24,7 @@
   }
 }
 
-.wpcf7 form.sent .wpcf7-response-output {
+.wpcf7-response-output {
   border: none !important;
   margin: rem(15) 0 0 0 !important;
   animation: hideresp 5s forwards;
@@ -45,6 +45,14 @@
       opacity: 0;
     }
   }
+}
+
+.wpc7 form.sent .wpcf7-response-output {
+  background-color: var(--text-accent);
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+  background-color: #ebac00;
 }
 
 .form__error {
@@ -73,6 +81,12 @@
 
 .page-content article {
   margin-bottom: rem(50);
+}
+
+
+.just-validate-error-label {
+  position: absolute;
+  bottom: -30px;
 }
 
 .notfound {

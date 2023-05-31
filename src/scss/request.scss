@@ -2,28 +2,38 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: rem(60);
+    gap: rem(30);
     margin-bottom: rem(30);
     padding-top: rem(50);
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       flex-direction: column;
     }
   }
   &__data {
-    @media (min-width: $mobile) {
-      flex: 0 1 rem(1100);
-    }
-    @media (max-width: $mobile) {
+    padding-top: rem(150);
+    @include adaptiveValue('padding-top', 150, 50, 3, 1540, 992);
+    @media (max-width: $tablet) {
       text-align: center;
+      flex: auto;
+      padding-top: 0;
     }
+  }
+  &__title {
+    margin-bottom: rem(40) !important;
   }
   &__description {
     margin-bottom: rem(30);
     @include adaptiveValue('font-size', 36, 20);
     line-height: math.div(46, 36);
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       margin-bottom: rem(0);
+    }
+  }
+  &__image {
+    flex: 0 0 percent(595, 1540);
+    transform: translateX(100px);
+    @media (max-width: $mobile) {
+      transform: translate(0);
     }
   }
   &__image img {
@@ -37,17 +47,25 @@
     width: 100%;
     height: 40px;
     padding: rem(10) rem(15);
+    &.just-validate-error-field {
+      border: 1px solid rgb(184, 17, 17);
+    }
   }
 
   .form {
-    background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
+    transform: translateY(-200px);
+    background:  linear-gradient(123.09deg, rgba(229,229,229,.7) -3.86%, rgba(242,242,242,.7) 50%, rgba(255,255,255,0) 109.9%);
     box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.83), inset 1px 1px 5px rgba(0, 0, 0, 0.05);
     filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-3px -5px 6px rgba(255, 255, 255, 0.38));
     backdrop-filter: blur(8.5px);
     border-radius: 25px;
     padding: rem(60) rem(50);
+    @media (max-width: $pc) {
+      transform: translateY(-100px);
+    }
     @media (max-width: $mobile) {
       padding: rem(30);
+      transform: translateY(0);
     }
     &__row {
       padding-bottom: rem(50);
@@ -57,11 +75,16 @@
         padding-bottom: rem(30);
         margin-bottom: rem(30);
       }
+      &._last {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
     }
+
     &__row-choices {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
       gap: rem(40);
       flex-wrap: wrap;
       @media (max-width: $mobileSmall) {
@@ -122,6 +145,7 @@
     .row-input {
       width: 100%;
       border-radius: 5px;
+      position: relative;
       &__label {
         font-size: rem(20);
         line-height: math.div(25, 20);
@@ -140,6 +164,9 @@
       justify-content: center;
       cursor: pointer;
       white-space: nowrap;
+      @media (max-width: $mobileSmall) {
+        width: 100%;
+      }
       .upload-button-icon {
         width: rem(30);
         height: rem(30);
@@ -173,9 +200,11 @@
       &-button {
         margin-bottom: rem(15);
         cursor: pointer;
+        width: rem(210);
+        text-align: center;
+        justify-content: center;
         @media (max-width: $mobileSmall) {
           width: 100%;
-          justify-content: center;
         }
       }
       &-text a {

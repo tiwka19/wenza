@@ -8,6 +8,17 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
+
+input[type="tel"]::-webkit-inner-spin-button,
+input[type="tel"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="tel"] {
+  -moz-appearance: textfield;
+}
+
 .input {
 	border-radius: 0 !important;
 	width: 100%;

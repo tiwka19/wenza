@@ -1,222 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-  @@include('html/_head.htm',{ "title":"HomePage" })
+@@include('html/_head.htm',{ "title":"HomePage" })
 
-  <body>
-    <div class="wrapper">
-      @@include('html/_header.htm',{})
-      <main class="page request">
-        <div class="request__container">
-          <div class="request__wrapper">
-            <div class="request__data">
-              <h1 class="request__title _section-title">Request for Technological Solution</h1>
-              <p class="request__description">Please fill in the form below. We will contact you shortly!</p>
-            </div>
-            <div class="request__image">
-              <img src="@img/work.png" alt="request image" />
+<body>
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page request">
+      <div class="request__container">
+        <div class="request__wrapper">
+          <div class="request__data">
+            <h1 class="request__title _section-title">Request for Technological Solution</h1>
+            <p class="request__description">Please fill in the form below. We will contact you shortly!</p>
+          </div>
+          <div class="request__image">
+            <img src="@img/work.png" alt="request image" />
+          </div>
+        </div>
+        <form class="request__form form wpcf7-form">
+          <div class="form__row">
+            <h2 class="form__row-title">Contact information</h2>
+            <div class="form__row-inputs">
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Customer’s Name</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="contactPhone" class="row-input__label">Contact Phone</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="email" class="row-input__label">Email</label>
+                <input autocomplete="off" type="text" name="email" id="email" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Company name</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
             </div>
           </div>
-          <form class="request__form form">
-            <div class="form__row">
-              <h2 class="form__row-title">Contact information</h2>
-              <div class="form__row-inputs">
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Customer’s Name</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Contact Phone</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Email</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Company name</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-              </div>
-            </div>
-            <div class="form__row">
-              <div class="form__row-choices form__choice">
-                <div class="form__choice-item">
-                  <h2 class="form__choice-title">Machine Type</h2>
-                  <div class="form__choice-checkboxes">
-                    <div class="checkbox">
-                      <input id="type_turning" class="checkbox__input" type="radio" value="1" name="machine_type" />
-                      <label for="type_turning" class="checkbox__label"><span class="checkbox__text">Turning</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <input id="type_milling" class="checkbox__input" type="radio" value="1" name="machine_type" />
-                      <label for="type_milling" class="checkbox__label"><span class="checkbox__text">Milling</span></label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form__choice-item">
-                  <h2 class="form__choice-title">CNC</h2>
-                  <div class="form__choice-checkboxes">
-                    <div class="checkbox">
-                      <input id="cnc_yes" class="checkbox__input" type="radio" value="1" name="cnc" />
-                      <label for="cnc_yes" class="checkbox__label"><span class="checkbox__text">Yes</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <input id="cnc_no" class="checkbox__input" type="radio" value="1" name="cnc" />
-                      <label for="cnc_no" class="checkbox__label"><span class="checkbox__text">No</span></label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form__choice-item">
-                  <h2 class="form__choice-title">Sketch of a Part</h2>
-                  <div class="form__choice-checkboxes">
-                    <div class="checkbox">
-                      <input id="sketch_yes" class="checkbox__input" type="radio" value="1" name="form[]" />
-                      <label for="sketch_yes" class="checkbox__label"><span class="checkbox__text">Yes</span></label>
-                    </div>
-                    <div class="checkbox">
-                      <input id="sketch_no" class="checkbox__input" type="radio" value="1" name="form[]" />
-                      <label for="sketch_no" class="checkbox__label"><span class="checkbox__text">No</span></label>
-                    </div>
-                  </div>
-                </div>
-
-                <input type="file" id="upload" hidden />
-                <label for="upload" class="form__upload-button">
-                  <div class="upload-button-icon">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
-                        fill="currentColor" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
-                        fill="currentColor" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
-                        fill="currentColor" />
-                    </svg>
-                  </div>
-                  <button type="button" class="remove-button">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M24 8L8 24M8 8L24 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                  <span> upload a photo</span>
-                </label>
-              </div>
-            </div>
-            <div class="form__row">
-              <h2 class="form__choice-title">Sketch of a Part</h2>
-              <div class="form__row-choices form__choice">
+          <div class="form__row">
+            <div class="form__row-choices form__choice">
+              <div class="form__choice-item">
+                <h2 class="form__choice-title">Machine Type</h2>
                 <div class="form__choice-checkboxes">
                   <div class="checkbox">
-                    <input id="workpiece_casting" class="checkbox__input" type="radio" name="sketch" />
-                    <label for="workpiece_casting" class="checkbox__label"><span class="checkbox__text">Castings</span></label>
+                    <input id="type_turning" class="checkbox__input" type="radio" value="1" name="machine_type" />
+                    <label for="type_turning" class="checkbox__label"><span
+                        class="checkbox__text">Turning</span></label>
                   </div>
                   <div class="checkbox">
-                    <input id="workpiece_rolled" class="checkbox__input" type="radio" name="sketch" />
-                    <label for="workpiece_rolled" class="checkbox__label"><span class="checkbox__text">Rolled products</span></label>
-                  </div>
-                  <div class="checkbox">
-                    <input id="workpiece_forging" class="checkbox__input" type="radio" name="sketch" />
-                    <label for="workpiece_forging" class="checkbox__label"><span class="checkbox__text">Forging</span></label>
-                  </div>
-                  <div class="checkbox">
-                    <input id="workpiece_premachined" class="checkbox__input" type="radio" name="sketch" />
-                    <label for="workpiece_premachined" class="checkbox__label"><span class="checkbox__text">Premachined</span></label>
+                    <input id="type_milling" class="checkbox__input" type="radio" value="1" name="machine_type" />
+                    <label for="type_milling" class="checkbox__label"><span
+                        class="checkbox__text">Milling</span></label>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="form__row">
-              <h2 class="form__row-title">Required parameters after machining <span>* if possible, attach a sketch</span></h2>
-              <div class="form__row-inputs _end">
-                <div class="form__row-input row-input">
-                  <label for="sizePrecision" class="row-input__label">Size Precision</label>
-                  <input autocomplete="off" type="text" id="sizePrecision" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="surfaceRoughness" class="row-input__label">Surface Roughness</label>
-                  <input autocomplete="off" type="text" id="surfaceRoughness" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="otherParameters" class="row-input__label">Other Parameters</label>
-                  <input autocomplete="off" type="text" id="otherParameters" class="input request__input" />
-                </div>
-                <input type="file" id="upload1" hidden />
-                <label for="upload1" class="form__upload-button">
-                  <div class="upload-button-icon">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
-                        fill="currentColor" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
-                        fill="currentColor" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
-                        fill="currentColor" />
-                    </svg>
+
+              <div class="form__choice-item">
+                <h2 class="form__choice-title">CNC</h2>
+                <div class="form__choice-checkboxes">
+                  <div class="checkbox">
+                    <input id="cnc_yes" class="checkbox__input" type="radio" value="1" name="cnc" />
+                    <label for="cnc_yes" class="checkbox__label"><span class="checkbox__text">Yes</span></label>
                   </div>
-                  <button type="button" class="remove-button">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M24 8L8 24M8 8L24 24" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </button>
-                  <span> upload a photo </span>
-                </label>
-              </div>
-            </div>
-            <div class="form__row">
-              <div class="form__row-inputs _grid">
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Hardness of the material to be machined</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Current Cutting Conditions</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Machine Time / Tool Life</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Current Tool</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Purpose of Changing the Tool</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
-                </div>
-                <div class="form__row-input row-input">
-                  <label for="customerName" class="row-input__label">Other Comments</label>
-                  <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+                  <div class="checkbox">
+                    <input id="cnc_no" class="checkbox__input" type="radio" value="1" name="cnc" />
+                    <label for="cnc_no" class="checkbox__label"><span class="checkbox__text">No</span></label>
+                  </div>
                 </div>
               </div>
+
+              <div class="form__choice-item">
+                <h2 class="form__choice-title">Sketch of a Part</h2>
+                <div class="form__choice-checkboxes">
+                  <div class="checkbox">
+                    <input id="sketch_yes" class="checkbox__input" type="radio" value="1" name="form[]" />
+                    <label for="sketch_yes" class="checkbox__label"><span class="checkbox__text">Yes</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="sketch_no" class="checkbox__input" type="radio" value="1" name="form[]" />
+                    <label for="sketch_no" class="checkbox__label"><span class="checkbox__text">No</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <input type="file" id="upload" hidden />
+              <label for="upload" class="form__upload-button">
+                <div class="upload-button-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
+                      fill="currentColor" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
+                      fill="currentColor" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
+                      fill="currentColor" />
+                  </svg>
+                </div>
+                <button type="button" class="remove-button">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 8L8 24M8 8L24 24" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <span> upload a photo</span>
+              </label>
             </div>
-            <div class="form__send">
-              <button type="submit" class="form__send-button button">send</button>
-              <p class="form__send-text">By clicking on the button, you agree to <a href="#">the privacy policy</a></p>
+            <div class="form__row-inputs" style="margin-top: 25px;">
+              <div class="form__row-input row-input">
+                <label for="machineModel" class="row-input__label">Machine Model</label>
+                <input autocomplete="off" id="machineModel" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="material" class="row-input__label">Material</label>
+                <input autocomplete="off" id="material" type="text" name="form[]" class="input request__input" />
+              </div>
             </div>
-          </form>
-        </div>
-      </main>
-      @@include('html/_footer.htm',{})
-    </div>
-    @@include('html/_js.htm',{})
-  </body>
+          </div>
+          <div class="form__row">
+            <h2 class="form__choice-title">Sketch of a Part</h2>
+            <div class="form__row-choices form__choice">
+              <div class="form__choice-checkboxes">
+                <div class="checkbox">
+                  <input id="workpiece_casting" class="checkbox__input" type="radio" name="sketch" />
+                  <label for="workpiece_casting" class="checkbox__label"><span
+                      class="checkbox__text">Castings</span></label>
+                </div>
+                <div class="checkbox">
+                  <input id="workpiece_rolled" class="checkbox__input" type="radio" name="sketch" />
+                  <label for="workpiece_rolled" class="checkbox__label"><span class="checkbox__text">Rolled
+                      products</span></label>
+                </div>
+                <div class="checkbox">
+                  <input id="workpiece_forging" class="checkbox__input" type="radio" name="sketch" />
+                  <label for="workpiece_forging" class="checkbox__label"><span
+                      class="checkbox__text">Forging</span></label>
+                </div>
+                <div class="checkbox">
+                  <input id="workpiece_premachined" class="checkbox__input" type="radio" name="sketch" />
+                  <label for="workpiece_premachined" class="checkbox__label"><span
+                      class="checkbox__text">Premachined</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form__row">
+            <h2 class="form__row-title">Required parameters after machining <span>* if possible, attach a sketch</span>
+            </h2>
+            <div class="form__row-inputs _end">
+              <div class="form__row-input row-input">
+                <label for="sizePrecision" class="row-input__label">Size Precision</label>
+                <input autocomplete="off" type="text" id="sizePrecision" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="surfaceRoughness" class="row-input__label">Surface Roughness</label>
+                <input autocomplete="off" type="text" id="surfaceRoughness" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="otherParameters" class="row-input__label">Other Parameters</label>
+                <input autocomplete="off" type="text" id="otherParameters" class="input request__input" />
+              </div>
+              <input type="file" id="upload1" hidden />
+              <label for="upload1" class="form__upload-button">
+                <div class="upload-button-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.76563 12.7678L9.897 13.8991L15.198 8.59814L15.198 18.6668C15.198 19.1086 15.5561 19.4668 15.998 19.4668C16.4398 19.4668 16.798 19.1086 16.798 18.6668L16.798 8.59814L22.099 13.8991L23.2303 12.7678L15.998 5.5354L8.76563 12.7678Z"
+                      fill="currentColor" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.9979 5.5354L23.2303 12.7678C23.5427 13.0802 23.5427 13.5867 23.2303 13.8991C22.9178 14.2115 22.4113 14.2115 22.0989 13.8991L15.9979 7.79814L9.89694 13.8991C9.58452 14.2115 9.07798 14.2115 8.76556 13.8991C8.45315 13.5867 8.45315 13.0802 8.76556 12.7678L15.9979 5.5354Z"
+                      fill="currentColor" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M6.66719 20.5334C7.10902 20.5334 7.46719 20.8916 7.46719 21.3334V22.6668C7.46719 23.6977 8.30292 24.5334 9.33385 24.5334L22.6672 24.5334C23.6981 24.5334 24.5339 23.6977 24.5339 22.6668V21.3334C24.5339 20.8916 24.892 20.5334 25.3339 20.5334C25.7757 20.5334 26.1339 20.8916 26.1339 21.3334V22.6668C26.1339 24.5814 24.5818 26.1334 22.6672 26.1334L9.33385 26.1334C7.41927 26.1334 5.86719 24.5814 5.86719 22.6668V21.3334C5.86719 20.8916 6.22536 20.5334 6.66719 20.5334Z"
+                      fill="currentColor" />
+                  </svg>
+                </div>
+                <button type="button" class="remove-button">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 8L8 24M8 8L24 24" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <span> upload a photo </span>
+              </label>
+            </div>
+          </div>
+          <div class="form__row _last">
+            <div class="form__row-inputs _grid">
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Hardness of the material to be machined</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Current Cutting Conditions</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Machine Time / Tool Life</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Current Tool</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Purpose of Changing the Tool</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+              <div class="form__row-input row-input">
+                <label for="customerName" class="row-input__label">Other Comments</label>
+                <input autocomplete="off" type="text" name="form[]" class="input request__input" />
+              </div>
+            </div>
+          </div>
+          <div class="form__send">
+            <button type="submit" class="form__send-button button">send</button>
+            <p class="form__send-text">By clicking on the button, you agree to <a href="#">the privacy policy</a></p>
+          </div>
+        </form>
+      </div>
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
 </html>

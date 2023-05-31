@@ -1,6 +1,7 @@
 import { isMobile } from './functions.js';
 import { flsModules } from './modules.js';
 import ScrollReveal from 'scrollreveal';
+import JustValidate from 'just-validate';
 
 const mapFunc = () => {
   let map = document.querySelector('.map');
@@ -158,13 +159,24 @@ const requestForm = () => {
     });
   });
 
-  form.addEventListener('wpcf7mailsent', () => {
-    fileInputs.forEach((fileInput) => {
-      fileInput.value = '';
-      fileInput.nextElementSibling.classList.remove('_active');
-      fileInput.nextElementSibling.querySelector('span').textContent = 'upload a photo';
-    });
+  form.addEventListener(
+    'wpcf7mailsent',
+    (e) => {
+      fileInputs.forEach((fileInput) => {
+        fileInput.value = '';
+        fileInput.nextElementSibling.classList.remove('_active');
+        fileInput.nextElementSibling.querySelector('span').textContent = 'upload a photo';
+      });
+    },
+    false,
+  );
+
+  const validator = new JustValidate(form);
+  const inputs = document.querySelectorAll('.request__input');
+  inputs.forEach((input) => {
+    validator.addField(input, [{ rule: 'required' }]);
   });
+  validator.addField('#email', [{ rule: 'email' }]);
 };
 
 requestForm();
