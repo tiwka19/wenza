@@ -1,0 +1,256 @@
+.contacts {
+  .card {
+    text-align: center;
+    padding: 70px;
+    border-radius: 36.48px;
+    transition: background 0.4s ease 0s;
+    @include adaptiveValue('font-size', 50, 30);
+    color: #fff;
+    max-width: rem(730);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(30);
+    background: linear-gradient(90deg, #2e2d2c, #4d64ab 51%, #010101) var(--x, 0) / 200%;
+    &:hover {
+      --x: 100%;
+    }
+    @media (max-width: $tablet) {
+      max-width: 100%;
+      padding: 30px 20px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: rem(70);
+    min-height: rem(470);
+    padding: rem(50) rem(20) 0 rem(20);
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background: linear-gradient(278deg, #4d64ab 0.78%, #010101 40.27%, #010101 52.08%, #2e2d2c 83.82%, #2e2d2c 94.6%);
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 372px;
+      height: 307px;
+      background: url('@img/contacts/contact-mask-1.png') 0 0 no-repeat;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 273px;
+      height: 307px;
+      background: url('@img/contacts/contact-mask-2.png') 0 0 no-repeat;
+    }
+    @media (max-width: $mobile) {
+      &::after,
+      &::before {
+        display: none;
+      }
+      min-height: auto;
+      padding: rem(30);
+      margin-bottom: rem(30);
+    }
+  }
+  &__logo {
+    max-width: rem(900);
+    width: 100%;
+    margin: 0 auto;
+    filter: invert(0);
+    margin-bottom: rem(40);
+    img {
+      max-width: 100%;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: rem(30);
+    }
+  }
+  &__title {
+    @include adaptiveValue('font-size', 53, 30);
+    color: #fff;
+    z-index: 5;
+    text-align: center;
+  }
+  &__data {
+    text-align: center;
+    margin-top: rem(-170);
+    z-index: 10;
+    position: relative;
+    @media (max-width: $mobile) {
+      margin-top: 0;
+    }
+  }
+  &__image {
+    margin: 0 auto;
+    @media (max-width: $mobile) {
+      margin-bottom: rem(15);
+    }
+    img {
+      @include adaptiveValue('width', 485, 250);
+      @include adaptiveValue('height', 485, 250);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &__name {
+    @include adaptiveValue('font-size', 80, 40);
+    font-family: $fontFamilyHeading;
+  }
+  &__position {
+    @include adaptiveValue('font-size', 64, 30);
+    margin-bottom: rem(30);
+  }
+  &__info {
+    font-family: $fontFamilyHeading;
+    margin-bottom: rem(100);
+  }
+
+  &__add {
+    margin: 0 auto;
+    margin-bottom: rem(30);
+  }
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(40);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      width: 100%;
+    }
+    .card {
+      max-width: rem(565);
+      @media (max-width: $tablet) {
+        max-width: 100%;
+      }
+    }
+  }
+  &__socials-card {
+    display: flex;
+    align-items: center;
+  }
+  &__adv {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: rem(30);
+    margin-bottom: rem(90);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  &__adv-item {
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 30px;
+    transition: all 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        border: 2px solid #4d64aa;
+        .contacts__adv-title {
+          color: #4d64aa;
+        }
+      }
+    }
+    @media (max-width: $mobile) {
+      padding: 0;
+    }
+  }
+  &__adv-box {
+    @include adaptiveValue('width', 270, 200);
+    @include adaptiveValue('height', 270, 200);
+    margin: 0 auto;
+    background-color: #2e2d2c;
+    border-radius: 30px;
+    margin-bottom: rem(30);
+  }
+  &__adv-title {
+    text-align: center;
+    font-size: rem(40);
+    max-width: rem(200);
+    margin: 0 auto;
+  }
+  &__linkedin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: rem(60);
+    @include adaptiveValue('gap', 75, 40);
+  }
+  &__linkedin-item {
+    position: relative;
+    transition: transform 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+    img {
+      max-width: 100%;
+      @media (max-width: $mobile) {
+        max-width: 200px;
+      }
+      @media (max-width: $mobileSmall) {
+        max-width: 150px;
+      }
+    }
+    &::after {
+      content: '';
+      width: rem(270);
+      height: rem(270);
+      position: absolute;
+      border-radius: 27.189px;
+      background: linear-gradient(56deg, #2e2d2c -24.27%, #010101 43.88%, #4d64ab 112.02%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      @media (max-width: $mobile) {
+        width: rem(230);
+        height: rem(230);
+      }
+      @media (max-width: $mobileSmall) {
+        width: rem(170);
+        height: rem(170);
+      }
+    }
+  }
+  .linkedin_icon {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    z-index: 2;
+    img {
+      width: 108px;
+      height: 108px;
+      object-fit: cover;
+      border-radius: 50%;
+      @media (max-width: $mobile) {
+        width: 80px;
+        height: 80px;
+      }
+      @media (max-width: $mobileSmall) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    @media (max-width: $mobile) {
+      right: -20px;
+      top: -20px;
+    }
+  }
+  &__others-card {
+    margin: 0 auto;
+    margin-bottom: rem(30);
+    display: block;
+  }
+}
