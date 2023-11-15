@@ -180,3 +180,18 @@ const requestForm = () => {
 };
 
 requestForm();
+
+document.getElementById('generateVCF').addEventListener('click', function () {
+  const { firstname, position, company, phone, email, url } = this.dataset;
+  const vCardContent = `BEGIN:VCARD\nVERSION:3.0\nFN:${firstname}\nORG:${company}\nTITLE:${position}\nEMAIL:${email}\nTEL;TYPE=WORK:${phone}\nURL:${url}\nEND:VCARD`;
+  const blob = new Blob([vCardContent], { type: 'text/vcard' });
+
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.download = 'contact.vcf';
+
+  document.body.appendChild(link);
+  link.click();
+
+  document.body.removeChild(link);
+});
